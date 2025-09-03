@@ -290,3 +290,66 @@ tl1
   .to(".gallery", {
     opacity: 1,
   });
+
+  // -------------------------------------------------
+
+let mainDiv = document.querySelector(".main-div");
+let cursor = document.querySelector(".cursor");
+
+mainDiv.addEventListener("mousemove", (e) => {
+  gsap.to(".cursor", {
+    scale:1,
+    x: e.x,
+    y: e.y,
+    scrub:true,
+    transform: "translate(-50%, -50%)",
+  });
+});
+
+let Name = document.querySelector(".page2-tag h1");
+let galleryBox2 = document.querySelector(".gallery-box2");
+let index = 0; // Track current state outside the click
+
+cursor.addEventListener("click", () => {
+  const images = document.querySelectorAll(
+    ".main-img, .img1, .img2, .img3, .img4, .img5, .img6"
+  );
+
+  images.forEach((img) => {
+    if (index === 0) {
+      galleryBox2.innerHTML = " <h1>Design <br> Fashion <br> Beauty</h1>"
+      Name.textContent = "Carla Poirier";
+      img.src = "/Images/carla-back-Photoroom.webp";
+      mainDiv.style.backgroundColor = "#5589CE";
+    } else if (index === 1) {
+      galleryBox2.innerHTML = " <h1>Culture <br> Art <br> Design</h1>"
+      Name.textContent = "Kristian Grove Møller";
+      img.src = "/Images/kristian-back-Photoroom.webp";
+      mainDiv.style.backgroundColor = "#B0AB92";
+    } else {
+      galleryBox2.innerHTML = "<h1>Food <br> Health <br> Music</h1>"
+      Name.textContent = "Zarah Khan";
+      img.src = "/Images/zarah-back-Photoroom.webp";
+      mainDiv.style.backgroundColor = "#63594F";
+    }
+  });
+
+  index = (index + 1) % 3; // ✅ Loop index: 0 → 1 → 2 → 0...
+});
+
+// ✅ Page2 Slide In
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".main",
+      start: "0.1%",
+      end: "90%",
+      scrub: 0.8,
+      pin: true,
+    },
+  })
+  .to(".page2", {
+    bottom: "0%",
+    left: "0%",
+    ease: "sine.inOut",
+  });

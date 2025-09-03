@@ -22,7 +22,7 @@ body {
   overflow-x: hidden;
 }
 
-.main{
+.main {
   height: 100%;
   width: 100%;
   overflow: hidden;
@@ -61,13 +61,11 @@ body {
 
 /* -------------------------------------------------- */
 
-
 .page1-heading {
   height: 100vh;
   width: 100%;
   position: absolute;
 }
-
 
 .line1,
 .line2,
@@ -95,9 +93,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-
 /* ---------------------------------------------- */
-
 
 .page1-div1 {
   height: 135px;
@@ -183,7 +179,6 @@ body {
   top: 60%;
   right: -3%;
 }
-
 
 /* --------------------------------------------------------- */
 
@@ -375,33 +370,28 @@ body {
   }
 }
 
-
 @media (max-width: 620px) {
+  .line1 {
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-   .line1 {
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-
-   .page1-div5 {
+  .page1-div5 {
     height: 120px;
     width: 100px;
     top: 24%;
     right: 1%;
   }
-
 }
 
 /* Small Mobile Phones */
 @media (max-width: 480px) {
-
-.line1 {
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  .line1 {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   .page1-div1 {
     height: 70px;
@@ -474,5 +464,297 @@ body {
     width: 80px;
     top: 52%;
     right: 0%;
+  }
+}
+
+/* ------------------------------------------------------------------- */
+
+.main-div {
+  height: 100vh;
+  width: 100%;
+  scale: 0;
+  z-index: 20;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: #63594f;
+}
+
+.cursor {
+  scale: 0;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  background-color: #e3f794;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: black;
+  overflow: hidden;
+  padding: 1vw;
+  overflow: hidden;
+}
+
+.cursor img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------------------------ */
+
+.main-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.img1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 0.9;
+}
+
+.img2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 0.8;
+}
+
+.img3 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 0.7;
+}
+
+.img4 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 0.6;
+}
+
+.img5 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 0.5;
+}
+
+.img6 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  scale: 0.4;
+}
+
+/* ------------------------------------------------------------------- */
+
+.main-div-heading {
+  position: absolute; /* ensures it stays over the main-div */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: white;
+  z-index: 10000;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  pointer-events: none; /* optional, allows clicks to pass through */
+}
+
+.main-div-heading h1 {
+  width: max-content;
+  opacity: 0;
+  font-size: 4.5vw;
+  font-weight: 100;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------- */
+
+.page2-tag {
+  position: absolute;
+  top: 50%;
+  left: 17%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1vw;
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Shared styles */
+.tag2-line1,
+.tag2-line2 {
+  width: 2px;
+  background: white;
+  position: absolute;
+  z-index: 1000;
+}
+
+/* Top diagonal ( / ) */
+.tag2-line1 {
+  height: 55vh;
+  top: 0%;
+  left: 40vw;
+  transform: rotate(35deg);
+  transform-origin: top;
+}
+
+/* Bottom diagonal ( \ ) */
+.tag2-line2 {
+  height: 55vh;
+  bottom: 0%;
+  left: 40vw;
+  transform: rotate(-35deg);
+  transform-origin: bottom;
+}
+
+@media (max-width: 768px) {
+  .tag2-line1,
+  .tag2-line2 {
+    opacity: 0;
+  }
+}
+
+/* -------------------------------------------------------- */
+
+.gallery {
+  height: 100vh;
+  width: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  color: white;
+  font-weight: 100;
+  padding: 1vw;
+  box-sizing: border-box;
+}
+
+/* Gallery sections */
+.gallery-box1 {
+  height: 25vh;
+  width: 100%;
+  font-size: 0.6vw;
+  padding: 1vw;
+  overflow: hidden;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+.gallery-box2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  font-family: "Beauty2", sans-serif;
+  font-weight: 100;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  padding: 1vw;
+  overflow: hidden;
+}
+
+.gallery-box2 h1 {
+  margin: 0;
+}
+
+.gallery-box3 {
+  height: 30vh;
+  width: 100%;
+  padding: 1vw;
+  overflow: hidden;
+}
+
+.gallery-div {
+  height: 100%;
+  width: 100%;
+  background-color: red;
+  overflow: hidden;
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  .gallery-box1,
+  .gallery-box3 {
+    opacity: 0;
+  }
+}
+
+/* ---------------------------------PAGE 2----------------- */
+
+.page2 {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  background-color: #fff;
+  font-weight: 100;
+}
+/* -------------------------------------------------------- */
+.page2-part1 {
+  height: 100vh;
+  width: 100vw;
+  font-size: 1.85vw;
+  padding: 0 1vw;
+  /* background-color: red; */
+}
+
+.page2-part1 h1 {
+  color: rgb(193, 191, 191);
+  font-weight: 100;
+}
+
+@media (max-width: 1008px) {
+  .page2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page2-part1 {
+    height: 50vh;
+    width: 100vw;
+    font-size: 1.85vw;
+    padding: 0 1vw;
+    background-color: red;
   }
 }
