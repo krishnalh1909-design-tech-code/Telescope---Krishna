@@ -208,17 +208,6 @@ gsap
   })
   .to(".line1", { opacity: 0, duration: 1 });
 
-const heading = document.getElementById("animated-heading");
-const text = heading.textContent;
-heading.innerHTML = "";
-
-text.split("").forEach((char) => {
-  const span = document.createElement("span");
-  span.className = "letter";
-  span.textContent = char;
-  heading.appendChild(span);
-});
-
 // ✅ Main Image & Text Scaling Timeline
 const tl1 = gsap.timeline({
   scrollTrigger: {
@@ -278,20 +267,29 @@ tl1
   .to(".main-div-heading", {
     opacity: 0,
   })
-  .from(".page2-tag h1", {
-    opacity: 0,
-  },"a+=1.5")
-   .from(".right-arrow,.left-arrow",{
-    scale:0,
-  },"a+=1.5")
-  .from(".tag2-line1,.tag2-line2", {
-    opacity: 0,
-  },"a+=1.5")
+  .from(
+    ".page2-tag h1",
+    {
+      opacity: 0,
+    },
+    "a+=1.5"
+  )
+
+  .from(
+    ".tag2-line1,.tag2-line2",
+    {
+      opacity: 0,
+    },
+    "a+=1.5"
+  )
+  .from(".right-arrow,.left-arrow", {
+    scale: 0,
+  })
   .to(".gallery", {
     opacity: 1,
-  },"a+=1.5");
+  });
 
-  // -------------------------------------------------
+// -------------------------------------------------
 let mainDiv = document.querySelector(".main-div");
 let right = document.querySelector(".right-arrow");
 let left = document.querySelector(".left-arrow");
@@ -305,32 +303,36 @@ let index = 0; // Current slide index
 const slides = [
   {
     name: "Zarah Khan",
-    description: "Co-Founder of STAN WORLDWIDE. Creative with 20+ years shaping brands at the intersection of culture, tech, art & design.",
+    description:
+      "Co-Founder of STAN WORLDWIDE. Creative with 20+ years shaping brands at the intersection of culture, tech, art & design.",
     text: "<h1>Food <br> Health <br> Music</h1>",
     imgSrc: "/Images/zarah-back-Photoroom.webp",
-    bgColor: "#63594F"
+    bgColor: "#63594F",
   },
   {
     name: "Carla Poirier",
-    description: "Creative Director and Brand Strategist whose work sits at the intersection of cultural curation and identity-building.",
+    description:
+      "Creative Director and Brand Strategist whose work sits at the intersection of cultural curation and identity-building.",
     text: "<h1>Design <br> Fashion <br> Beauty</h1>",
     imgSrc: "/Images/carla-back-Photoroom.webp",
-    bgColor: "#5589CE"
+    bgColor: "#5589CE",
   },
   {
     name: "Kristian Grove Møller",
-    description: "Co-Founder of STAN WORLDWIDE. Creative with 20+ years shaping brands at the intersection of culture, tech, art & design.",
+    description:
+      "Co-Founder of STAN WORLDWIDE. Creative with 20+ years shaping brands at the intersection of culture, tech, art & design.",
     text: "<h1>Culture <br> Art <br> Design</h1>",
-    imgSrc: "/Images/kristian-back-Photoropm.webp",
-    bgColor: "#B0AB92"
+    imgSrc: "/Images/kristian-back-Photoroom.webp",
+    bgColor: "#B0AB92",
   },
   {
     name: "Hasan Khalid",
-    description: "Anti-disciplinary artist and former Director of Creative Development for GQ magazine.",
+    description:
+      "Anti-disciplinary artist and former Director of Creative Development for GQ magazine.",
     text: "<h1>Travel <br> Food & Wine <br> Music</h1>",
     imgSrc: "/Images/hasan-back-Photoroom.webp",
-    bgColor: "#95A7B5"
-  }
+    bgColor: "#95A7B5",
+  },
 ];
 
 // Function to update the slide
@@ -353,7 +355,7 @@ function updateSlide() {
     y: 70,
     opacity: 0,
     duration: 1,
-    ease: "power3.out"
+    ease: "power3.out",
   });
 }
 
@@ -372,8 +374,18 @@ left.addEventListener("click", () => {
 // Initial load
 updateSlide();
 
-
 // -----------------------------------------------------------
+
+const heading = document.getElementById("animated-heading");
+const text = heading.textContent;
+heading.innerHTML = "";
+
+text.split("").forEach((char) => {
+  const span = document.createElement("span");
+  span.className = "letter";
+  span.textContent = char;
+  heading.appendChild(span);
+});
 
 // ✅ Page2 Slide In
 gsap
@@ -390,4 +402,24 @@ gsap
     bottom: "0%",
     left: "0%",
     ease: "sine.inOut",
+  });
+
+// ------------------------------------------------------------------
+
+// ✅ Animated Heading Letters
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: ".main",
+      start: "0.2%",
+      end: "150%",
+      scrub: 1,
+      pin: true,
+      markers: true,
+    },
+  })
+  .to(".letter", {
+    color: "black",
+    stagger: 0.07,
+    ease: "power1.inOut",
   });

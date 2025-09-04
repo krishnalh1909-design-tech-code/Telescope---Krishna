@@ -498,13 +498,6 @@ body {
   font-size: 20px;
   color: black;
   padding: 10px;
-  /* transition: transform 0.3s ease; */
-}
-
-/* Add hover effect */
-.right-arrow:hover,
-.left-arrow:hover {
-  transform: scale(1.1);
 }
 
 /* Positioning for larger screens */
@@ -521,8 +514,8 @@ body {
 /* Image inside buttons */
 .right-arrow img,
 .left-arrow img {
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 50%;
   object-fit: contain;
 }
 
@@ -564,12 +557,10 @@ body {
 }
 
 @media (max-width: 1000px) {
-
   .right-arrow,
   .left-arrow {
     height: 55px;
     width: 55px;
-    
   }
 
   .right-arrow {
@@ -580,7 +571,6 @@ body {
     left: 40%;
   }
 }
-
 
 /* ------------------------------------------------------------------ */
 
@@ -791,9 +781,7 @@ body {
 
 /* Mobile phones */
 
-
 @media (max-width: 768px) {
-
   .gallery-box1 h1,
   .gallery-box3 {
     opacity: 0;
@@ -801,8 +789,8 @@ body {
 }
 
 @media (max-width: 1000px) {
-  .gallery-box1 h1{
-   font-size: 2vw;
+  .gallery-box1 h1 {
+    font-size: 2vw;
   }
 }
 
@@ -818,14 +806,16 @@ body {
   display: flex;
   background-color: #fff;
   font-weight: 100;
+  overflow: hidden;
+  /* flex-direction: column; */
 }
-/* -------------------------------------------------------- */
 .page2-part1 {
-  height: 100vh;
-  width: 75vw;
+  height: 57vh;
+  width: 73vw;
   font-size: 1.85vw;
-  padding: 0 1vw;
-  /* background-color: red; */
+  padding: 1vw;
+  background-color: red;
+  overflow: hidden;
 }
 
 .page2-part1 h1 {
@@ -834,62 +824,35 @@ body {
 }
 
 .page2-part2 {
-  height: max-content;
-  width: 25vw;
+  height: 100vh;
+  width: 27vw;
   display: flex;
   flex-direction: column;
   gap: 10px;
   position: relative;
+  background-color: green;
 }
 
-.page2-div1,
-.page2-div2,
-.page2-div3 {
-  position: absolute;
-  height: 60vh;
-  width: 100%;
-}
-
-.page2-div1 {
-  background-image: url(https://cdn.telescope.fyi/landing/about/livre.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.page2-div2 {
-  top: 70%;
-  background-image: url(https://cdn.telescope.fyi/landing/about/livre.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-.page2-div3 {
-  top: 140%;
-  background-image: url(https://cdn.telescope.fyi/landing/about/livre.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
-@media (max-width: 1008px) {
+@media (max-width: 1000px) {
   .page2 {
-    display: flex;
     flex-direction: column;
   }
 
   .page2-part1 {
-    height: 50vh;
+    height: 45vh;
     width: 100vw;
-    font-size: 1.85vw;
-    padding: 0 1vw;
-    background-color: red;
   }
 
   .page2-part2 {
-    height: 50vh;
+    height: 55vh;
     width: 100vw;
-    display: flex;
-    gap: 10px;
-    position: relative;
-    background-color: blue;
+    flex-direction: row;
   }
+}
+
+
+.page3{
+  height: 100vh;
+  width: 100%;
+  background-color: yellow;
 }
