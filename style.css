@@ -482,13 +482,12 @@ body {
   background-color: #63594f;
 }
 
-.cursor {
-  scale: 0;
+/* Shared arrow button styles */
+.right-arrow,
+.left-arrow {
   z-index: 99999;
-  top: 0;
-  left: 0;
-  height: 65px;
-  width: 65px;
+  height: 70px;
+  width: 70px;
   border-radius: 50%;
   background-color: #e3f794;
   position: absolute;
@@ -496,18 +495,92 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 20px;
   color: black;
-  overflow: hidden;
-  padding: 1vw;
-  overflow: hidden;
+  padding: 10px;
+  /* transition: transform 0.3s ease; */
 }
 
-.cursor img {
+/* Add hover effect */
+.right-arrow:hover,
+.left-arrow:hover {
+  transform: scale(1.1);
+}
+
+/* Positioning for larger screens */
+.right-arrow {
+  bottom: 5%;
+  left: 55%;
+}
+
+.left-arrow {
+  bottom: 5%;
+  left: 45%;
+}
+
+/* Image inside buttons */
+.right-arrow img,
+.left-arrow img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
+
+/* Responsive adjustments for tablets and phones */
+@media (max-width: 768px) {
+  .right-arrow,
+  .left-arrow {
+    height: 40px;
+    width: 40px;
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .right-arrow {
+    left: 60%;
+  }
+
+  .left-arrow {
+    left: 40%;
+  }
+}
+
+@media (max-width: 480px) {
+  .right-arrow,
+  .left-arrow {
+    height: 35px;
+    width: 35px;
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  .right-arrow {
+    left: 65%;
+  }
+
+  .left-arrow {
+    left: 35%;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .right-arrow,
+  .left-arrow {
+    height: 55px;
+    width: 55px;
+    
+  }
+
+  .right-arrow {
+    left: 60%;
+  }
+
+  .left-arrow {
+    left: 40%;
+  }
+}
+
 
 /* ------------------------------------------------------------------ */
 
@@ -580,9 +653,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+
   color: white;
   z-index: 10000;
   text-align: center;
@@ -640,8 +715,12 @@ body {
   transform-origin: bottom;
 }
 
+/* Small screens: transform to / \ (V shape) */
 @media (max-width: 768px) {
-  .tag2-line1,
+  .tag2-line1 {
+    opacity: 0;
+  }
+
   .tag2-line2 {
     opacity: 0;
   }
@@ -669,13 +748,14 @@ body {
 
 /* Gallery sections */
 .gallery-box1 {
-  height: 25vh;
+  height: 28vh;
   width: 100%;
-  font-size: 0.6vw;
+  font-size: 0.8vw;
   padding: 1vw;
   overflow: hidden;
   font-weight: 100;
   line-height: 1.5;
+  overflow: hidden;
 }
 
 .gallery-box2 {
@@ -686,7 +766,7 @@ body {
   gap: 10px;
   font-family: "Beauty2", sans-serif;
   font-weight: 100;
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-size: 1vw;
   padding: 1vw;
   overflow: hidden;
 }
@@ -710,10 +790,19 @@ body {
 }
 
 /* Mobile phones */
+
+
 @media (max-width: 768px) {
-  .gallery-box1,
+
+  .gallery-box1 h1,
   .gallery-box3 {
     opacity: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .gallery-box1 h1{
+   font-size: 2vw;
   }
 }
 
@@ -733,7 +822,7 @@ body {
 /* -------------------------------------------------------- */
 .page2-part1 {
   height: 100vh;
-  width: 100vw;
+  width: 75vw;
   font-size: 1.85vw;
   padding: 0 1vw;
   /* background-color: red; */
@@ -742,6 +831,43 @@ body {
 .page2-part1 h1 {
   color: rgb(193, 191, 191);
   font-weight: 100;
+}
+
+.page2-part2 {
+  height: max-content;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.page2-div1,
+.page2-div2,
+.page2-div3 {
+  position: absolute;
+  height: 60vh;
+  width: 100%;
+}
+
+.page2-div1 {
+  background-image: url(https://cdn.telescope.fyi/landing/about/livre.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.page2-div2 {
+  top: 70%;
+  background-image: url(https://cdn.telescope.fyi/landing/about/livre.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.page2-div3 {
+  top: 140%;
+  background-image: url(https://cdn.telescope.fyi/landing/about/livre.jpg);
+  background-size: cover;
+  background-position: center;
 }
 
 @media (max-width: 1008px) {
@@ -756,5 +882,14 @@ body {
     font-size: 1.85vw;
     padding: 0 1vw;
     background-color: red;
+  }
+
+  .page2-part2 {
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    background-color: blue;
   }
 }

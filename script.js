@@ -278,64 +278,102 @@ tl1
   .to(".main-div-heading", {
     opacity: 0,
   })
-  // .to(".cursor",{
-  //   scale:1,
-  // })
-  .from(".page2-tag", {
+  .from(".page2-tag h1", {
     opacity: 0,
-  })
+  },"a+=1.5")
+   .from(".right-arrow,.left-arrow",{
+    scale:0,
+  },"a+=1.5")
   .from(".tag2-line1,.tag2-line2", {
     opacity: 0,
-  })
+  },"a+=1.5")
   .to(".gallery", {
     opacity: 1,
-  });
+  },"a+=1.5");
 
   // -------------------------------------------------
-
 let mainDiv = document.querySelector(".main-div");
-let cursor = document.querySelector(".cursor");
-
-mainDiv.addEventListener("mousemove", (e) => {
-  gsap.to(".cursor", {
-    scale:1,
-    x: e.x,
-    y: e.y,
-    scrub:true,
-    transform: "translate(-50%, -50%)",
-  });
-});
+let right = document.querySelector(".right-arrow");
+let left = document.querySelector(".left-arrow");
 
 let Name = document.querySelector(".page2-tag h1");
 let galleryBox2 = document.querySelector(".gallery-box2");
-let index = 0; // Track current state outside the click
+let galleryBox1 = document.querySelector(".gallery-box1 h1");
+let index = 0; // Current slide index
 
-cursor.addEventListener("click", () => {
+// Data for each slide
+const slides = [
+  {
+    name: "Zarah Khan",
+    description: "Co-Founder of STAN WORLDWIDE. Creative with 20+ years shaping brands at the intersection of culture, tech, art & design.",
+    text: "<h1>Food <br> Health <br> Music</h1>",
+    imgSrc: "/Images/zarah-back-Photoroom.webp",
+    bgColor: "#63594F"
+  },
+  {
+    name: "Carla Poirier",
+    description: "Creative Director and Brand Strategist whose work sits at the intersection of cultural curation and identity-building.",
+    text: "<h1>Design <br> Fashion <br> Beauty</h1>",
+    imgSrc: "/Images/carla-back-Photoroom.webp",
+    bgColor: "#5589CE"
+  },
+  {
+    name: "Kristian Grove Møller",
+    description: "Co-Founder of STAN WORLDWIDE. Creative with 20+ years shaping brands at the intersection of culture, tech, art & design.",
+    text: "<h1>Culture <br> Art <br> Design</h1>",
+    imgSrc: "/Images/kristian-back-Photoropm.webp",
+    bgColor: "#B0AB92"
+  },
+  {
+    name: "Hasan Khalid",
+    description: "Anti-disciplinary artist and former Director of Creative Development for GQ magazine.",
+    text: "<h1>Travel <br> Food & Wine <br> Music</h1>",
+    imgSrc: "/Images/hasan-back-Photoroom.webp",
+    bgColor: "#95A7B5"
+  }
+];
+
+// Function to update the slide
+function updateSlide() {
   const images = document.querySelectorAll(
     ".main-img, .img1, .img2, .img3, .img4, .img5, .img6"
   );
 
-  images.forEach((img) => {
-    if (index === 0) {
-      galleryBox2.innerHTML = " <h1>Design <br> Fashion <br> Beauty</h1>"
-      Name.textContent = "Carla Poirier";
-      img.src = "/Images/carla-back-Photoroom.webp";
-      mainDiv.style.backgroundColor = "#5589CE";
-    } else if (index === 1) {
-      galleryBox2.innerHTML = " <h1>Culture <br> Art <br> Design</h1>"
-      Name.textContent = "Kristian Grove Møller";
-      img.src = "/Images/kristian-back-Photoroom.webp";
-      mainDiv.style.backgroundColor = "#B0AB92";
-    } else {
-      galleryBox2.innerHTML = "<h1>Food <br> Health <br> Music</h1>"
-      Name.textContent = "Zarah Khan";
-      img.src = "/Images/zarah-back-Photoroom.webp";
-      mainDiv.style.backgroundColor = "#63594F";
-    }
-  });
+  const current = slides[index];
 
-  index = (index + 1) % 3; // ✅ Loop index: 0 → 1 → 2 → 0...
+  // Update content
+  galleryBox2.innerHTML = current.text;
+  galleryBox1.innerHTML = current.description;
+  Name.textContent = current.name;
+  images.forEach((img) => (img.src = current.imgSrc));
+  mainDiv.style.backgroundColor = current.bgColor;
+
+  // GSAP animation
+  gsap.from(".page2-tag, .gallery-box1, .gallery-box2", {
+    y: 70,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.out"
+  });
+}
+
+// Right arrow (Next)
+right.addEventListener("click", () => {
+  index = (index + 1) % slides.length;
+  updateSlide();
 });
+
+// Left arrow (Previous)
+left.addEventListener("click", () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlide();
+});
+
+// Initial load
+updateSlide();
+
+
+// -----------------------------------------------------------
 
 // ✅ Page2 Slide In
 gsap
