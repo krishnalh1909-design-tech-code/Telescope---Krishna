@@ -445,23 +445,39 @@ function createTimeline() {
   });
 
   if (window.innerWidth > 1000) {
-    size.fromTo(
-      ".page2-part2",
-      { top: "80%" },
-      {
-        top: "-120%",
-        ease: "sine.inOut",
-      }
-    );
+    size
+      .fromTo(
+        ".page2-part2",
+        { top: "80%" },
+        {
+          top: "-120%",
+          ease: "sine.inOut",
+        }
+      )
+      .to(
+        ".shop",
+        {
+          top: "0%",
+        },
+        "a"
+      );
   } else {
-    size.fromTo(
-      ".page2-part2",
-      { right: "-100%" },
-      {
-        right: "60%",
-        ease: "sine.inOut",
-      }
-    );
+    size
+      .fromTo(
+        ".page2-part2",
+        { right: "-100%" },
+        {
+          right: "60%",
+          ease: "sine.inOut",
+        }
+      )
+      .to(
+        ".shop",
+        {
+          top: "0%",
+        },
+        "a"
+      )
   }
 }
 

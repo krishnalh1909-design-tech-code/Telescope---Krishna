@@ -879,6 +879,15 @@ body::-webkit-scrollbar {
   object-fit: cover;
 }
 
+.shop{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: green;
+}
+
 .page3 {
   height: 100vh;
   width: 100%;
