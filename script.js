@@ -412,7 +412,7 @@ gsap
     scrollTrigger: {
       trigger: ".main",
       start: "0.2%",
-      end: "150%",
+      end: "100%",
       scrub: 1,
       pin: true,
       markers: true,
@@ -423,3 +423,57 @@ gsap
     stagger: 0.07,
     ease: "power1.inOut",
   });
+
+// ---------------------------------------------------------------
+
+// ✅ Page2-Part2 Upward Scroll
+let size;
+
+function createTimeline() {
+  if (size) {
+    size.kill(); // kill existing timeline to prevent stacking
+  }
+
+  size = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".main",
+      start: "0.3%",
+      end: "150%",
+      scrub: 1,
+      pin: true,
+    },
+  });
+
+  if (window.innerWidth > 1000) {
+    size.fromTo(
+      ".page2-part2",
+      { top: "80%" },
+      {
+        top: "-120%",
+        ease: "sine.inOut",
+      }
+    );
+  } else {
+    size.fromTo(
+      ".page2-part2",
+      { right: "-100%" },
+      {
+        right: "60%",
+        ease: "sine.inOut",
+      }
+    );
+  }
+}
+
+// Create timeline initially
+createTimeline();
+
+// Recreate timeline on resize with debounce
+let resizeTimeout;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    createTimeline();
+    ScrollTrigger.refresh(); // Refresh ScrollTrigger to update positions
+  }, 200); // adjust delay as needed
+});

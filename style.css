@@ -22,6 +22,10 @@ body {
   overflow-x: hidden;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .main {
   height: 100%;
   width: 100%;
@@ -814,23 +818,24 @@ body {
   width: 73vw;
   font-size: 1.85vw;
   padding: 1vw;
-  background-color: red;
+  /* background-color: red; */
   overflow: hidden;
 }
 
 .page2-part1 h1 {
   color: rgb(193, 191, 191);
   font-weight: 100;
+  padding: 0 1vw;
 }
 
 .page2-part2 {
-  height: 100vh;
+  height: 170vh;
   width: 27vw;
   display: flex;
   flex-direction: column;
   gap: 10px;
   position: relative;
-  background-color: green;
+  /* background-color: green; */
 }
 
 @media (max-width: 1000px) {
@@ -850,8 +855,31 @@ body {
   }
 }
 
+.slider1 {
+  height: 55vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
 
-.page3{
+.slider1 h1,
+.slider1 h4 {
+  font-weight: 100;
+}
+
+.slider1-img {
+  height: 80%;
+  width: 100%;
+}
+
+.slider1-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.page3 {
   height: 100vh;
   width: 100%;
   background-color: yellow;
