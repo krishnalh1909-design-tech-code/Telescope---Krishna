@@ -438,32 +438,30 @@ function createTimeline() {
     scrollTrigger: {
       trigger: ".main",
       start: "0.3%",
-      end: "150%",
+      end: "100%",
       scrub: 1,
       pin: true,
     },
   });
 
   if (window.innerWidth > 1000) {
-    size
-      .fromTo(
-        ".page2-part2",
-        { top: "80%" },
-        {
-          top: "-100%",
-          ease: "sine.inOut",
-        }
-      );
+    size.fromTo(
+      ".page2-part2",
+      { top: "80%" },
+      {
+        top: "-100%",
+        ease: "sine.inOut",
+      }
+    );
   } else {
-    size
-      .fromTo(
-        ".page2-part2",
-        { right: "-100%" },
-        {
-          right: "120%",
-          ease: "sine.inOut",
-        }
-      )
+    size.fromTo(
+      ".page2-part2",
+      { right: "-100%" },
+      {
+        right: "120%",
+        ease: "sine.inOut",
+      }
+    );
   }
 }
 
@@ -480,29 +478,50 @@ window.addEventListener("resize", () => {
   }, 200); // adjust delay as needed
 });
 
-
 const shops = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".main",
-      start: "0.4%",
-      end: "350%",
-      scrub: 1,
-      pin: true,
+  scrollTrigger: {
+    trigger: ".main",
+    start: "0.4%",
+    end: "250%",
+    scrub: 1,
+    pin: true,
+    markers: true,
+  },
+});
+
+shops
+  .to(
+    ".page2-part1,.page2-part2",
+    {
+      opacity: 0,
     },
-  });
-
-  shops.to(
-        ".page2-part1,.page2-part2",
-        {
-          opacity: 0.3,
-        },
-        "a"
-      )
-      .to(
-        ".shops",
-        {
-          top: "-100%",
-        },
-        "a"
-      );
-
+    "a"
+  )
+  .to(
+    ".shops",
+    {
+      top: "-190%",
+    },
+    "a"
+  )
+  .to(
+    ".curate",
+    {
+      top: "36%",
+    },
+    "b-=0.5"
+  )
+  .to(
+    ".your",
+    {
+      top: "55%",
+    },
+    "b-=0.5"
+  )
+  .to(
+    ".taste",
+    {
+      top: "75%",
+    },
+    "b-=0.5"
+  );
