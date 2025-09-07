@@ -50,7 +50,7 @@ body::-webkit-scrollbar {
 /* -------------------------------------------------- */
 
 .page1 {
-  height: 100vh;
+  height: 103vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -474,7 +474,7 @@ body::-webkit-scrollbar {
 /* ------------------------------------------------------------------- */
 
 .main-div {
-  height: 100vh;
+  height: 103vh;
   width: 100%;
   scale: 0;
   z-index: 20;
@@ -801,7 +801,7 @@ body::-webkit-scrollbar {
 /* ---------------------------------PAGE 2----------------- */
 
 .page2 {
-  height: 100vh;
+  height: 105vh;
   width: 100%;
   position: absolute;
   bottom: -100%;
@@ -811,21 +811,18 @@ body::-webkit-scrollbar {
   background-color: #fff;
   font-weight: 100;
   overflow: hidden;
-  /* flex-direction: column; */
+  padding: 20px;
 }
 .page2-part1 {
   height: 57vh;
   width: 73vw;
   font-size: 1.85vw;
-  padding: 1vw;
-  /* background-color: red; */
   overflow: hidden;
 }
 
 .page2-part1 h1 {
   color: rgb(193, 191, 191);
   font-weight: 100;
-  padding: 0 1vw;
 }
 
 .page2-part2 {
@@ -835,7 +832,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   gap: 10px;
   position: relative;
-  /* background-color: green; */
+  overflow: hidden;
 }
 
 @media (max-width: 1000px) {
@@ -850,14 +847,32 @@ body::-webkit-scrollbar {
 
   .page2-part2 {
     height: 55vh;
-    width: 100vw;
+    width: 170vw;
     flex-direction: row;
   }
 }
 
+@media (max-width: 1000px) {
+  .page2-part1 h1{
+    font-size: 5vw;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .page2{
+    padding: 20px 5px;
+     background-color: red;
+  }
+  .page2-part1 h1{
+    font-size: 6vw;
+  }
+}
+
+
 .slider1 {
   height: 55vh;
-  width: 100%;
+  width: 27vw;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -879,11 +894,17 @@ body::-webkit-scrollbar {
   object-fit: cover;
 }
 
+@media (max-width: 600px) {
+  .slider1{
+    width: 800px;
+  }
+}
+
 .shop{
   position: absolute;
   top: 100%;
   left: 0;
-  height: 100vh;
+  height: 105vh;
   width: 100%;
   background-color: green;
 }

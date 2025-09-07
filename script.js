@@ -450,7 +450,7 @@ function createTimeline() {
         ".page2-part2",
         { top: "80%" },
         {
-          top: "-120%",
+          top: "-100%",
           ease: "sine.inOut",
         }
       )
@@ -459,7 +459,7 @@ function createTimeline() {
         {
           top: "0%",
         },
-        "a"
+        "a-=.1"
       );
   } else {
     size
@@ -467,7 +467,7 @@ function createTimeline() {
         ".page2-part2",
         { right: "-100%" },
         {
-          right: "60%",
+          right: "120%",
           ease: "sine.inOut",
         }
       )
@@ -476,8 +476,8 @@ function createTimeline() {
         {
           top: "0%",
         },
-        "a"
-      )
+        "a-=.1"
+      );
   }
 }
 
