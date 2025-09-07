@@ -453,13 +453,6 @@ function createTimeline() {
           top: "-100%",
           ease: "sine.inOut",
         }
-      )
-      .to(
-        ".shop",
-        {
-          top: "0%",
-        },
-        "a-=.1"
       );
   } else {
     size
@@ -471,13 +464,6 @@ function createTimeline() {
           ease: "sine.inOut",
         }
       )
-      .to(
-        ".shop",
-        {
-          top: "0%",
-        },
-        "a-=.1"
-      );
   }
 }
 
@@ -493,3 +479,30 @@ window.addEventListener("resize", () => {
     ScrollTrigger.refresh(); // Refresh ScrollTrigger to update positions
   }, 200); // adjust delay as needed
 });
+
+
+const shops = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".main",
+      start: "0.4%",
+      end: "350%",
+      scrub: 1,
+      pin: true,
+    },
+  });
+
+  shops.to(
+        ".page2-part1,.page2-part2",
+        {
+          opacity: 0.3,
+        },
+        "a"
+      )
+      .to(
+        ".shops",
+        {
+          top: "-100%",
+        },
+        "a"
+      );
+

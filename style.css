@@ -483,7 +483,8 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: space-between;
   overflow: hidden;
-  background-color: #63594f;
+  margin-bottom: 1px;
+  /* background-color: #63594f; */
 }
 
 /* Shared arrow button styles */
@@ -811,7 +812,7 @@ body::-webkit-scrollbar {
   background-color: #fff;
   font-weight: 100;
   overflow: hidden;
-  padding: 20px;
+  padding: 30px;
 }
 .page2-part1 {
   height: 57vh;
@@ -853,22 +854,22 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 1000px) {
-  .page2-part1 h1{
+  .page2-part1 h1 {
     font-size: 5vw;
   }
 }
 
 @media (max-width: 400px) {
-
-  .page2{
+  .page2 {
     padding: 20px 5px;
-     background-color: red;
+    background-color: red;
   }
-  .page2-part1 h1{
+  .page2-part1 h1 {
     font-size: 6vw;
   }
 }
 
+/* ---------------------------------------------------- */
 
 .slider1 {
   height: 55vh;
@@ -895,18 +896,128 @@ body::-webkit-scrollbar {
 }
 
 @media (max-width: 600px) {
-  .slider1{
+  .slider1 {
     width: 800px;
   }
 }
 
-.shop{
+/* ---------------------------------------------- */
+.shops {
   position: absolute;
-  top: 100%;
+  top: 120%;
   left: 0;
-  height: 105vh;
+  height: 200vh;
   width: 100%;
-  background-color: green;
+  /* background-color: rgb(83, 81, 81); */
+  background-color: #fff;
+  display: flex;
+  padding: 1vw;
+}
+
+.shop-heading {
+  height: 40vh;
+  width: 100%;
+  background-color: red;
+}
+/* ------------------------------------------------------- */
+.shop {
+  width: 25%;
+  height: 100%;
+  /* background-color: red; */
+  /* border: 1px solid black; */
+}
+
+.shop h1,
+.shop h4 {
+  font-weight: 100;
+}
+
+/* ------------------------------------------------------------ */
+
+.shop1-item {
+  height: 70vh;
+  width: 100%;
+  padding: 1vw;
+  /* background-color: green; */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.shop1-item-img {
+  height: 85%;
+  width: 100%;
+}
+
+.shop1-item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------- */
+
+.shop2-item {
+  height: 60vh;
+  width: 100%;
+  padding: 1vw;
+  /* background-color: green; */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.shop2-item-img {
+  height: 85%;
+  width: 100%;
+}
+
+.shop2-item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* -------------------------------------------------------------- */
+
+.shop3-item {
+  height: 55vh;
+  width: 100%;
+  padding: 1vw;
+  /* background-color: green; */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.shop3-item-img {
+  height: 85%;
+  width: 100%;
+}
+
+.shop3-item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------- */
+
+.shop4-item {
+  height: 70vh;
+  width: 100%;
+  padding: 1vw;
+  /* background-color: green; */
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.shop4-item-img {
+  height: 85%;
+  width: 100%;
+}
+
+.shop4-item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .page3 {
