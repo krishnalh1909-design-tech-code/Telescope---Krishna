@@ -484,7 +484,7 @@ const shops = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "0.4%",
-    end: "200%",
+    end: "250%",
     scrub: 1,
     pin: true,
     markers: true,
@@ -569,42 +569,45 @@ page3
       stagger: 0.025,
     },
     "a"
-  );
+  )
+  .to(".clip-bg", {
+    opacity: 1,
+  });
 
 // ------------------------------------------------
-
 const tlNew = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.8%",
-    end: "+=6000", // Longer scroll distance (slower movement)
-    scrub: 2, // Smoother and delayed reaction
+    end: "+=6000",
+    scrub: 2,
     pin: true,
     // markers: true,
   },
 });
 
-// ✅ Circular Path Box Animation
 const centerX2 = 0;
 const centerY2 = 45;
-const radius = 69;
+const radius = 63;
 const steps = 72;
 const durationPerStep = 1 / steps;
 const boxCount = 13;
 const boxDelay = 0.08;
 
 const boxImageSrcs = [
-  "back11.webp",
-  "back10.webp",
-  "back9.webp",
-  "back8.webp",
-  "back7.webp",
-  "back6.webp",
-  "back5.webp",
-  "back4.webp",
-  "back3.webp",
-  "back2.webp",
-  "back1.webp",
+  "./Images/back.webp",
+  "/Images/1.webp",
+  "/Images/0.webp",
+  "/Images/10.webp",
+  "/Images/9.webp",
+  "/Images/8.webp",
+  "/Images/7.webp",
+  "/Images/6.webp",
+  "/Images/5.webp",
+  "/Images/4.webp",
+  "/Images/3.webp",
+  "/Images/2.webp",
+  "./Images/back.webp",
 ];
 
 let lastBoxAtTop = null;
@@ -622,7 +625,7 @@ for (let i = 0; i <= steps; i++) {
       boxSelector,
       {
         left: `${x}%`,
-        top: `${y + 10}%`,
+        top: `${y}%`,
         duration: durationPerStep,
         ease: "none",
       },
@@ -636,7 +639,7 @@ for (let i = 0; i <= steps; i++) {
         () => {
           if (lastBoxAtTop !== b) {
             lastBoxAtTop = b;
-            const img = document.querySelector(".page3");
+            const img = document.querySelector(".clip-bg img");
             if (img && boxImageSrcs[b - 1]) {
               img.src = boxImageSrcs[b - 1];
             }

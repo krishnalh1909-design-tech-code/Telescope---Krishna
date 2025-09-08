@@ -22,9 +22,9 @@ body {
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .main {
   height: 100%;
@@ -1111,7 +1111,7 @@ body::-webkit-scrollbar {
   justify-content: center;
   gap: 10px;
   position: relative;
-  background-color: #f4f3f0;
+  /* background-color: #f4f3f0; */
   overflow: hidden;
   font-family: Beauty;
 }
@@ -1223,6 +1223,23 @@ body::-webkit-scrollbar {
 
 /* ------------------------------------------------------------------- */
 
+.clip-bg {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.clip-bg img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* ------------------------------------------------------------ */
+
 .page3-clip-section {
   height: 100vh;
   width: 85%;
@@ -1235,11 +1252,12 @@ body::-webkit-scrollbar {
 /* ------------------------------------------------------------*/
 
 .box-section {
-  height: 100vh;
-  width: 67%;
+  height: 120vh;
+  width: 75%;
   position: absolute;
   top: -15%;
   right: 0%;
+  /* background-color: red; */
 }
 
 /* ---------------------------------------------------------- */
@@ -1247,8 +1265,6 @@ body::-webkit-scrollbar {
 .page3-box {
   height: 130px;
   width: 180px;
-  /* background-color:rgb(149, 0, 255); */
-  /* z-index: 100; */
   position: absolute;
   top: 0;
   left: 0;
