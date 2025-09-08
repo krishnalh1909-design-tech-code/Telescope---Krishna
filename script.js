@@ -496,21 +496,74 @@ shops
   .to(
     ".curate",
     {
-      top: "77%",
+      top: "67%",
     },
-    "b-=0.3"
+    "b-=0.5"
   )
   .to(
     ".your",
     {
-      top: "97%",
+      top: "91%",
     },
-    "b-=0.3"
+    "b-=0.5"
   )
   .to(
     ".taste",
     {
-      top: "117%",
+      top: "116.8%",
     },
-    "b-=0.3"
+    "b-=0.5"
   );
+
+
+  const page3 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".main",
+    start: "50.7%",
+    end: "200%",
+    scrub: 1,
+    pin: true,
+    markers: true,
+  },
+});
+
+page3
+  .to(
+    ".page3-line2",
+    {
+      left: "-20%",
+      ease: "power1.inOut",
+    },
+    "a"
+  )
+  .to(
+    ".page3-line3",
+    {
+      right: "-30%",
+      ease: "power1.inOut",
+    },
+    "a"
+  )
+  .to(
+    ".page3-main-div",
+    {
+      scale: 1,
+      ease: "power2.inOut",
+    },
+    "a"
+  )
+  .to(
+    [
+      ".page3-img1",
+      ".page3-img2",
+      ".page3-img3",
+      ".page3-img4",
+      ".page3-img5",
+      ".page3-img6",
+    ],
+    {
+      scale: 1,
+      stagger:0.025
+    },
+    "a"
+  )
