@@ -166,7 +166,7 @@ body {
 .page1-div10 {
   height: 136px;
   width: 191px;
-  bottom: 2%;
+  bottom: 3%;
   left: 55%;
 }
 
@@ -247,7 +247,7 @@ body {
   .page1-div10 {
     height: 115px;
     width: 160px;
-    bottom: 2%;
+    bottom: 3%;
     left: 50%;
   }
   .page1-div11 {
@@ -357,7 +357,7 @@ body {
   .page1-div10 {
     height: 100px;
     width: 130px;
-    bottom: 2%;
+    bottom: 3%;
     left: 45%;
   }
   .page1-div11 {
@@ -1061,7 +1061,7 @@ body {
 .curate {
   height: 87vh;
   width: 100%;
-  background-color: red;
+  background-color: #e3f794;
   position: absolute;
   top: 90%;
   left: 0;
@@ -1071,7 +1071,7 @@ body {
 .your {
   height: 90vh;
   width: 100%;
-  background-color: rgb(218, 206, 206);
+  background-color:#fff;
   position: absolute;
   top: 108%;
   left: 0;
@@ -1081,7 +1081,7 @@ body {
 .taste {
   height: 87vh;
   width: 100%;
-  background-color: red;
+  background-color: #e3f794;
   position: absolute;
   top: 129%;
   left: 0;
@@ -1103,7 +1103,7 @@ body {
 } */
 
 .page3 {
-  height: 100vh;
+  height: 101vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -1145,7 +1145,7 @@ body {
 /* ------------------------------------------------ */
 
 .page3-main-div {
-  height: 100vh;
+  height: 101vh;
   width: 100%;
   scale: 0;
   z-index: 20;
@@ -1224,7 +1224,7 @@ body {
 /* ------------------------------------------------------------------- */
 
 .clip-bg {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
@@ -1241,7 +1241,7 @@ body {
 /* ------------------------------------------------------------ */
 
 .page3-clip-section {
-  height: 100vh;
+  height: 100%;
   width: 85%;
   /* background-color: rgb(96, 93, 93); */
   position: absolute;
@@ -1275,4 +1275,15 @@ body {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+/* ----------------------------------- */
+
+.main-bottom{
+  height: 101vh;
+  width:100% ;
+  background-color: red;
+  position: absolute;
+  top: 100%;
+  left: 0;
 }

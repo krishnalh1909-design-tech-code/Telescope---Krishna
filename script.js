@@ -15,54 +15,56 @@ gsap.ticker.lagSmoothing(0);
 
 const imageSets = {
   box1: [
-    "https://cdn.telescope.fyi/landing/hero/eac2/1.jpg",
-    "https://cdn.telescope.fyi/landing/hero/eac2/2.jpg",
-    "https://cdn.telescope.fyi/landing/hero/eac2/3.jpg",
-    "https://cdn.telescope.fyi/landing/hero/eac2/4.jpg",
-    "https://cdn.telescope.fyi/landing/hero/eac2/5.jpg",
-    "https://cdn.telescope.fyi/landing/hero/eac2/0.jpg",
+    "/Images/Box1-images/0.webp",
+    "/Images/Box1-images/1.webp",
+    "/Images/Box1-images/2.webp",
+    "/Images/Box1-images/3.webp",
+    "/Images/Box1-images/4.webp",
+    "/Images/Box1-images/5.webp",
   ],
 
   box2: [
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor2/0.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor2/1.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor2/2.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor2/3.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor2/4.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor2/5.jpg",
+    "/Images/Box2-images/0.webp",
+    "/Images/Box2-images/1.webp",
+    "/Images/Box2-images/2.webp",
+    "/Images/Box2-images/3.webp",
+    "/Images/Box2-images/4.webp",
+    "/Images/Box2-images/5.webp",
   ],
 
   box3: [
-    "https://cdn.telescope.fyi/landing/hero/home-tech1/3.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech1/4.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech1/5.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech1/0.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech1/1.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech1/2.jpg",
+    "/Images/Box3-images/0.webp",
+    "/Images/Box3-images/1.webp",
+    "/Images/Box3-images/2.webp",
+    "/Images/Box3-images/3.webp",
+    "/Images/Box3-images/4.webp",
+    "/Images/Box3-images/5.webp",
   ],
+
   box4: [
-    "https://cdn.telescope.fyi/landing/hero/fashion3/0.jpg",
-    "https://cdn.telescope.fyi/landing/hero/fashion3/1.jpg",
-    "https://cdn.telescope.fyi/landing/hero/fashion3/2.jpg",
-    "https://cdn.telescope.fyi/landing/hero/fashion3/3.jpg",
-    "https://cdn.telescope.fyi/landing/hero/fashion3/4.jpg",
-    "https://cdn.telescope.fyi/landing/hero/fashion3/5.jpg",
+    "/Images/Box4-images/0.webp",
+    "/Images/Box4-images/1.webp",
+    "/Images/Box4-images/2.webp",
+    "/Images/Box4-images/3.webp",
+    "/Images/Box4-images/4.webp",
+    "/Images/Box4-images/5.webp",
   ],
+
   box5: [
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor1/1.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor1/2.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor1/3.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor1/4.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor1/5.jpg",
-    "https://cdn.telescope.fyi/landing/hero/sports-outdoor1/0.jpg",
+    "/Images/Box5-images/0.webp",
+    "/Images/Box5-images/1.webp",
+    "/Images/Box5-images/2.webp",
+    "/Images/Box5-images/3.webp",
+    "/Images/Box5-images/4.webp",
+    "/Images/Box5-images/5.webp",
   ],
   box6: [
-    "https://cdn.telescope.fyi/landing/hero/home-tech2/2.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech2/3.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech2/4.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech2/5.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech2/0.jpg",
-    "https://cdn.telescope.fyi/landing/hero/home-tech2/1.jpg",
+    "/Images/Box6-images/0.webp",
+    "/Images/Box6-images/1.webp",
+    "/Images/Box6-images/2.webp",
+    "/Images/Box6-images/3.webp",
+    "/Images/Box6-images/4.webp",
+    "/Images/Box6-images/5.webp",
   ],
 
   box7: [
@@ -651,3 +653,11 @@ for (let i = 0; i <= steps; i++) {
     }
   }
 }
+
+tlNew.to(
+  ".main-bottom",
+  {
+    top: "0%",
+  },
+  "-=0.8"
+);
