@@ -23,7 +23,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  /* display: none; */
+  display: none;
 }
 
 .main {
@@ -864,14 +864,14 @@ body::-webkit-scrollbar {
     padding: 20px 5px;
     /* background-color: red; */
   }
-  .page2-part1{
+  .page2-part1 {
     height: 30vh;
   }
   .page2-part1 h1 {
     font-size: 6vw;
   }
 
-  .page2-part2{
+  .page2-part2 {
     height: 70vh;
   }
 }
@@ -926,7 +926,7 @@ body::-webkit-scrollbar {
   height: 40vh;
   width: 100%;
   position: absolute;
-  top:0%;
+  top: 0%;
   left: 0;
   display: flex;
   flex-direction: column;
@@ -934,23 +934,22 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 
-.shop-heading h4{
+.shop-heading h4 {
   font-weight: 100;
 }
 
-.shop-heading h1{
+.shop-heading h1 {
   font-size: 3.5vw;
   font-weight: 300;
   margin-bottom: 30px;
 }
 
-.shop-heading h3{
- color: rgb(170, 168, 168);
- font-size: 1vw;
+.shop-heading h3 {
+  color: rgb(170, 168, 168);
+  font-size: 1vw;
 }
 
-
-.shop-wrapper{
+.shop-wrapper {
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -1104,7 +1103,7 @@ body::-webkit-scrollbar {
 } */
 
 .page3 {
- height: 100vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -1130,7 +1129,6 @@ body::-webkit-scrollbar {
   font-size: 3.5vw;
   font-family: Beauty;
 }
-
 
 .page3-line2 {
   left: 39.2%;
@@ -1159,6 +1157,7 @@ body::-webkit-scrollbar {
   margin-bottom: 1px;
 }
 
+/* -------------------------------------------- */
 
 .page3-main-img {
   position: absolute;
@@ -1224,3 +1223,40 @@ body::-webkit-scrollbar {
 
 /* ------------------------------------------------------------------- */
 
+.page3-clip-section {
+  height: 100vh;
+  width: 85%;
+  /* background-color: rgb(96, 93, 93); */
+  position: absolute;
+  top: 0;
+  right: 0;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+/* ------------------------------------------------------------*/
+
+.box-section {
+  height: 100vh;
+  width: 67%;
+  position: absolute;
+  top: -15%;
+  right: 0%;
+}
+
+/* ---------------------------------------------------------- */
+
+.page3-box {
+  height: 130px;
+  width: 180px;
+  /* background-color:rgb(149, 0, 255); */
+  /* z-index: 100; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.page3-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

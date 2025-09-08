@@ -478,6 +478,8 @@ window.addEventListener("resize", () => {
   }, 200); // adjust delay as needed
 });
 
+// -------------------------------------------
+
 const shops = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
@@ -515,8 +517,9 @@ shops
     "b-=0.5"
   );
 
+// ---------------------------------------------
 
-  const page3 = gsap.timeline({
+const page3 = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.7%",
@@ -563,7 +566,85 @@ page3
     ],
     {
       scale: 1,
-      stagger:0.025
+      stagger: 0.025,
     },
     "a"
-  )
+  );
+
+// ------------------------------------------------
+
+const tlNew = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".main",
+    start: "50.8%",
+    end: "+=6000", // Longer scroll distance (slower movement)
+    scrub: 2, // Smoother and delayed reaction
+    pin: true,
+    // markers: true,
+  },
+});
+
+// ✅ Circular Path Box Animation
+const centerX2 = 0;
+const centerY2 = 45;
+const radius = 69;
+const steps = 72;
+const durationPerStep = 1 / steps;
+const boxCount = 13;
+const boxDelay = 0.08;
+
+const boxImageSrcs = [
+  "back11.webp",
+  "back10.webp",
+  "back9.webp",
+  "back8.webp",
+  "back7.webp",
+  "back6.webp",
+  "back5.webp",
+  "back4.webp",
+  "back3.webp",
+  "back2.webp",
+  "back1.webp",
+];
+
+let lastBoxAtTop = null;
+
+for (let i = 0; i <= steps; i++) {
+  const angle = (i / steps) * Math.PI * 2 - Math.PI / 2;
+  const x = centerX2 + radius * Math.cos(angle);
+  const y = centerY2 + radius * Math.sin(angle);
+
+  for (let b = 1; b <= boxCount; b++) {
+    const boxSelector = `.box${b}`;
+    const delay = i * durationPerStep - boxDelay * b;
+
+    tlNew.to(
+      boxSelector,
+      {
+        left: `${x}%`,
+        top: `${y + 10}%`,
+        duration: durationPerStep,
+        ease: "none",
+      },
+      delay
+    );
+
+    const isAtTop =
+      Math.abs(angle) < 0.1 || Math.abs(angle - 2 * Math.PI) < 0.1;
+    if (isAtTop) {
+      tlNew.call(
+        () => {
+          if (lastBoxAtTop !== b) {
+            lastBoxAtTop = b;
+            const img = document.querySelector(".page3");
+            if (img && boxImageSrcs[b - 1]) {
+              img.src = boxImageSrcs[b - 1];
+            }
+          }
+        },
+        null,
+        delay
+      );
+    }
+  }
+}
