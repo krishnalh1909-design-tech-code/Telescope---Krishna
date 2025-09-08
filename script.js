@@ -415,7 +415,7 @@ gsap
       end: "100%",
       scrub: 1,
       pin: true,
-      markers: true,
+      // markers: true,
     },
   })
   .to(".letter", {
@@ -482,7 +482,7 @@ const shops = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "0.4%",
-    end: "250%",
+    end: "200%",
     scrub: 1,
     pin: true,
     markers: true,
@@ -490,38 +490,27 @@ const shops = gsap.timeline({
 });
 
 shops
-  .to(
-    ".page2-part1,.page2-part2",
-    {
-      opacity: 0,
-    },
-    "a"
-  )
-  .to(
-    ".shops",
-    {
-      top: "-190%",
-    },
-    "a"
-  )
+  .to(".shops", {
+    top: "-250%",
+  })
   .to(
     ".curate",
     {
-      top: "36%",
+      top: "77%",
     },
-    "b-=0.5"
+    "b-=0.3"
   )
   .to(
     ".your",
     {
-      top: "55%",
+      top: "97%",
     },
-    "b-=0.5"
+    "b-=0.3"
   )
   .to(
     ".taste",
     {
-      top: "75%",
+      top: "117%",
     },
-    "b-=0.5"
+    "b-=0.3"
   );

@@ -907,19 +907,49 @@ body::-webkit-scrollbar {
   position: absolute;
   top: 120%;
   left: 0;
-  height: 290vh;
+  height: 240vh;
   width: 100%;
-  /* background-color: rgb(83, 81, 81); */
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   display: flex;
+  flex-direction: column-reverse;
   padding: 1vw;
 }
 
 .shop-heading {
   height: 40vh;
   width: 100%;
-  background-color: red;
+  position: absolute;
+  top:0%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(21, 255, 0); */
 }
+
+.shop-heading h4{
+  font-weight: 100;
+}
+
+.shop-heading h1{
+  font-size: 3.5vw;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.shop-heading h3{
+ color: rgb(170, 168, 168);
+ font-size: 1vw;
+}
+
+
+.shop-wrapper{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+
 /* ------------------------------------------------------- */
 .shop {
   width: 25%;
@@ -939,7 +969,6 @@ body::-webkit-scrollbar {
   height: 65vh;
   width: 100%;
   padding: 1vw;
-  /* background-color: green; */
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -962,7 +991,6 @@ body::-webkit-scrollbar {
   height: 60vh;
   width: 100%;
   padding: 1vw;
-  /* background-color: green; */
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -985,7 +1013,6 @@ body::-webkit-scrollbar {
   height: 55vh;
   width: 100%;
   padding: 1vw;
-  /* background-color: green; */
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -1008,7 +1035,6 @@ body::-webkit-scrollbar {
   height: 65vh;
   width: 100%;
   padding: 1vw;
-  /* background-color: green; */
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -1032,7 +1058,7 @@ body::-webkit-scrollbar {
   width: 100%;
   background-color: red;
   position: absolute;
-  top: 70%;
+  top: 90%;
   left: 0;
   clip-path: polygon(100% 0, 100% 30%, 100% 50%, 100% 100%, 0 64%, 0 30%);
 }
@@ -1042,7 +1068,7 @@ body::-webkit-scrollbar {
   width: 100%;
   background-color: rgb(218, 206, 206);
   position: absolute;
-  top: 88%;
+  top: 108%;
   left: 0;
   clip-path: polygon(0 0, 100% 33%, 100% 71%, 0 100%, 0% 50%);
 }
@@ -1052,7 +1078,7 @@ body::-webkit-scrollbar {
   width: 100%;
   background-color: red;
   position: absolute;
-  top: 109%;
+  top: 129%;
   left: 0;
   clip-path: polygon(100% 0, 100% 30%, 100% 50%, 100% 100%, 0 64%, 0 30%);
 }
