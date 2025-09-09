@@ -1071,7 +1071,7 @@ body {
 .your {
   height: 90vh;
   width: 100%;
-  background-color:#fff;
+  background-color: #fff;
   position: absolute;
   top: 108%;
   left: 0;
@@ -1278,12 +1278,48 @@ body {
 }
 
 /* ----------------------------------- */
-
-.main-bottom{
+.main-bottom {
+  width: 100%;
+  padding: 5vh 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
   height: 101vh;
-  width:100% ;
-  background-color: red;
+  width: 100%;
+  background-color: white;
   position: absolute;
   top: 100%;
   left: 0;
+  font-size: 30px;
+}
+
+.bottom-heading1 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+.bottom-heading1 h1 {
+  font-weight: 100;
+  margin: 0;
+}
+
+.bottom-heading2 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+}
+
+.bottom-heading2 h1 {
+  font-weight: 100;
+  margin: 0;
 }
