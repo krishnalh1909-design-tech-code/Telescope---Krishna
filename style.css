@@ -45,6 +45,7 @@ body {
   font-family: Beauty2;
   color: white;
   font-weight: 500;
+ mix-blend-mode: difference;
 }
 
 /* -------------------------------------------------- */
@@ -1322,4 +1323,8 @@ body {
 .bottom-heading2 h1 {
   font-weight: 100;
   margin: 0;
+}
+
+.bottom-heading2 svg text{
+  font-size: 30px;
 }

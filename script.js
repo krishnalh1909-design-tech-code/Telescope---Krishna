@@ -13,6 +13,37 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
+
+ const boxM = document.querySelectorAll('.box');
+
+  boxM.forEach(box => {
+    box.addEventListener('mousemove', e => {
+      const rect = box.getBoundingClientRect();
+      const boxCenterX = rect.left + rect.width / 2;
+      const boxCenterY = rect.top + rect.height / 2;
+
+      // Calculate cursor distance from center of box
+      const deltaX = e.clientX - boxCenterX;
+      const deltaY = e.clientY - boxCenterY;
+
+      // Magnet strength factor (max translation in px)
+      const strength = 15;
+
+      // Normalize movement by box size for smoothness
+      const moveX = (deltaX / (rect.width / 2)) * strength;
+      const moveY = (deltaY / (rect.height / 2)) * strength;
+
+      // Apply transform with a subtle inverse move to create attraction
+      box.style.transform = `translate(${moveX * 1}px, ${moveY * 1}px) scale(1.05)`;
+    });
+
+    box.addEventListener('mouseleave', () => {
+      // Reset on mouse leave
+      box.style.transform = 'translate(0, 0) scale(1)';
+    });
+  });
+
+
 const imageSets = {
   box1: [
     "/Images/Box1-images/0.webp",
@@ -489,7 +520,7 @@ const shops = gsap.timeline({
     end: "250%",
     scrub: 1,
     pin: true,
-    markers: true,
+    // markers: true,
   },
 });
 
@@ -528,7 +559,7 @@ const page3 = gsap.timeline({
     end: "200%",
     scrub: 1,
     pin: true,
-    markers: true,
+    // markers: true,
   },
 });
 
