@@ -489,9 +489,9 @@ function createTimeline() {
   } else {
     size.fromTo(
       ".page2-part2",
-      { right: "-100%" },
+      { right: "-110%" },
       {
-        right: "120%",
+        right: "140%",
         ease: "sine.inOut",
       }
     );
@@ -525,9 +525,12 @@ const shops = gsap.timeline({
 });
 
 shops
+  .to(".page2-part2",{
+    opacity:0
+  },"a")
   .to(".shops", {
     top: "-250%",
-  })
+  },"a")
   .to(
     ".curate",
     {
@@ -621,7 +624,7 @@ const tlNew = gsap.timeline({
 
 const centerX2 = 0;
 const centerY2 = 45;
-const radius = 63;
+const radius = 65;
 const steps = 72;
 const durationPerStep = 1 / steps;
 const boxCount = 13;
