@@ -619,11 +619,35 @@ page3
   });
 
 // ------------------------------------------------
+
+
+
+// ✅ Utility: Check if element is centered in viewport
+function isAtViewportCenter(el) {
+  const rect = el.getBoundingClientRect();
+  const elCenter = rect.top + rect.height / 2;
+  const viewportCenter = window.innerHeight / 2;
+  return Math.abs(elCenter - viewportCenter) < rect.height / 2;
+}
+
+// ✅ Track headers in center
+gsap.ticker.add(() => {
+  document.querySelectorAll(".h1-list h1").forEach((li) => {
+    if (isAtViewportCenter(li)) {
+      li.classList.add("active");
+    } else {
+      li.classList.remove("active");
+    }
+  });
+});
+
+
+// ---------------------------------------------------
 const tlNew = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.8%",
-    end: "+=6000",
+    end: "+=6000", 
     scrub: 2,
     pin: true,
     // markers: true,
@@ -631,8 +655,8 @@ const tlNew = gsap.timeline({
 });
 
 const centerX2 = 0;
-const centerY2 = 45;
-const radius = 65;
+const centerY2 = 48;
+const radius = 69;
 const steps = 72;
 const durationPerStep = 1 / steps;
 const boxCount = 13;
@@ -656,6 +680,7 @@ const boxImageSrcs = [
 
 let lastBoxAtTop = null;
 
+// 🌀 Circular motion for boxes
 for (let i = 0; i <= steps; i++) {
   const angle = (i / steps) * Math.PI * 2 - Math.PI / 2;
   const x = centerX2 + radius * Math.cos(angle);
@@ -678,6 +703,7 @@ for (let i = 0; i <= steps; i++) {
 
     const isAtTop =
       Math.abs(angle) < 0.1 || Math.abs(angle - 2 * Math.PI) < 0.1;
+
     if (isAtTop) {
       tlNew.call(
         () => {
@@ -696,10 +722,13 @@ for (let i = 0; i <= steps; i++) {
   }
 }
 
-tlNew.to(
-  ".main-bottom",
+// 🔼 Vertical scroll of .h1-list
+tlNew.fromTo(
+  ".heading-wrapper",
+  { top:"115%" },
   {
-    top: "0%",
+    top:"-105%",
+    ease: "none", // precise scroll sync
   },
-  "-=0.8"
+ "-=2"
 );
