@@ -969,7 +969,7 @@ body {
 @media (max-width: 800px) {
   .slider1 {
     height: 65vh;
-     width: 800px;
+    width: 800px;
   }
 }
 
@@ -982,7 +982,7 @@ body {
 @media (max-width: 400px) {
   .slider1 {
     height: 65vh;
-     width: 800px;
+    width: 800px;
   }
 }
 
@@ -1031,8 +1031,6 @@ body {
   min-height: 100vh;
   display: flex;
 }
-
-
 
 @media (max-width: 800px) {
   .shop-heading h4 {
@@ -1149,8 +1147,8 @@ body {
   object-fit: cover;
 }
 
-@media (max-width: 800px){
-   .shop2,
+@media (max-width: 800px) {
+  .shop2,
   .shop3,
   .shop4 {
     display: none;
@@ -1160,24 +1158,19 @@ body {
     width: 100%;
   }
 
-  .shop h1{
+  .shop h1 {
     font-size: 6vw;
   }
-  .shop h4{
+  .shop h4 {
     font-size: 4.5vw;
   }
 }
 
-
 @media (max-width: 600px) {
-  
-
   .shop {
     width: 100%;
   }
 }
-
-
 
 /* --------------------------------------------------------- */
 
@@ -1361,6 +1354,36 @@ body {
   object-fit: cover;
 }
 
+/* ----------------------------------------- */
+
+/* Shared styles */
+.tag3-line1,
+.tag3-line2 {
+  width: 2px;
+  background: white;
+  position: absolute;
+  z-index: 1000;
+}
+
+/* Top diagonal ( / ) */
+.tag3-line1 {
+  height: 55vh;
+  top: 0%;
+  left: 40vw;
+  transform: rotate(40deg);
+  transform-origin: top;
+}
+
+/* Bottom diagonal ( \ ) */
+.tag3-line2 {
+  height: 55vh;
+  bottom: 0%;
+  left: 40vw;
+  transform: rotate(-40deg);
+  transform-origin: bottom;
+}
+
+
 /* ------------------------------------------------------------ */
 
 .page3-clip-section {
@@ -1374,8 +1397,8 @@ body {
 }
 /* ------------------------------------------------------------*/
 
-.heading-wrapper{
-  height: 101vh;
+.heading-wrapper {
+  min-height: 101vh;
   width: 55%;
   /* background-color: red; */
   z-index: 100;
@@ -1385,30 +1408,26 @@ body {
   overflow: hidden;
 }
 
-.h1-list{
-  height: 100vh;
-  width: 100%;
+.h1-list {
+  min-height: max-content;
+  width: 90%;
   position: absolute;
-  /* background-color: blue; */
-  top: 0%;
-  left: 10%;
+  background-color: blue;
+  top: 100%;
+  left: 20%;
   /* display: flex;
   flex-direction: column;
   gap: 70px; */
 }
 
-.h1-list h1{
-  margin-bottom: 70px;
+.h1-list h1 {
+  margin-bottom: 100px;
   font-weight: 100;
   font-family: Beauty2;
   font-size: 3vw;
-  color: #959292;
+  color: #f3f3f3;
 }
 
-
-.active{
-  color: white;
-}
 /* ------------------------------------------------------------ */
 .box-section {
   height: 120vh;
@@ -1479,5 +1498,3 @@ body {
   font-weight: 100;
   margin: 0;
 }
-
-

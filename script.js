@@ -616,43 +616,24 @@ page3
   )
   .to(".clip-bg", {
     opacity: 1,
+  })
+  .from(".tag3-line1,.tag3-line2", {
+    opacity: 0,
   });
-
-// ------------------------------------------------
-
-
-
-// ✅ Utility: Check if element is centered in viewport
-function isAtViewportCenter(el) {
-  const rect = el.getBoundingClientRect();
-  const elCenter = rect.top + rect.height / 2;
-  const viewportCenter = window.innerHeight / 2;
-  return Math.abs(elCenter - viewportCenter) < rect.height / 2;
-}
-
-// ✅ Track headers in center
-gsap.ticker.add(() => {
-  document.querySelectorAll(".h1-list h1").forEach((li) => {
-    if (isAtViewportCenter(li)) {
-      li.classList.add("active");
-    } else {
-      li.classList.remove("active");
-    }
-  });
-});
-
 
 // ---------------------------------------------------
+
 const tlNew = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.8%",
-    end: "+=6000", 
+    end: "+=5000",
     scrub: 2,
     pin: true,
     // markers: true,
   },
 });
+
 
 const centerX2 = 0;
 const centerY2 = 48;
@@ -660,7 +641,7 @@ const radius = 69;
 const steps = 72;
 const durationPerStep = 1 / steps;
 const boxCount = 13;
-const boxDelay = 0.08;
+const boxDelay = 0.05;
 
 const boxImageSrcs = [
   "./Images/back.webp",
@@ -722,13 +703,29 @@ for (let i = 0; i <= steps; i++) {
   }
 }
 
-// 🔼 Vertical scroll of .h1-list
 tlNew.fromTo(
-  ".heading-wrapper",
-  { top:"115%" },
+  ".h1-list h1",
   {
-    top:"-105%",
-    ease: "none", // precise scroll sync
+    y: 0,
   },
- "-=2"
+  {
+    y: -3000,
+    stagger: 0.03,
+  },
+  "-=1.4"
 );
+
+const tlBottom = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".main",
+    start: "50.9%",
+    end: "80%",
+    scrub: 2,
+    pin: true,
+    // markers: true,
+  },
+});
+
+tlBottom.to(".main-bottom", {
+  top: "0%",
+});
