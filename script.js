@@ -634,7 +634,6 @@ const tlNew = gsap.timeline({
   },
 });
 
-
 const centerX2 = 0;
 const centerY2 = 48;
 const radius = 69;
@@ -719,13 +718,66 @@ const tlBottom = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.9%",
-    end: "80%",
+    end: "150%",
     scrub: 2,
     pin: true,
     // markers: true,
   },
 });
 
-tlBottom.to(".main-bottom", {
-  top: "0%",
+tlBottom
+  .to(
+    ".tag3-line1,.tag3-line2",
+    {
+      opacity: 0,
+    },
+    "a"
+  )
+  .to(
+    ".main-bottom",
+    {
+      top: "0%",
+    },
+    "a"
+  )
+
+  .to(
+    ".bottom-heading1,.bottom-heading2",
+    {
+      opacity: 0,
+    },
+    "+=1"
+  )
+  .to(
+    ".bottom-heading3",
+    {
+      opacity: 1,
+    },
+    "+=1"
+  );
+
+let main_Bottom = document.querySelector(".main-bottom");
+main_Bottom.addEventListener("mousemove", (e) => {
+  gsap.to(".img-boxes", {
+    opacity: 1,
+    x: e.clientX,
+    y: e.clientY,
+  });
 });
+
+gsap.fromTo(
+  ".img-box",
+  {
+    x: -300,
+    y: 300,
+    scale: 0,
+  },
+  {
+    x: 300,
+    y: -300,
+    scale: 1,
+    repeat: -1,
+    duration: 4,
+    stagger: 0.09,
+  }
+);
