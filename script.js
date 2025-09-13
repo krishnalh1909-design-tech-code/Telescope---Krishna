@@ -548,14 +548,16 @@ shops
     {
       x: 1500,
       y: 0,
-    },"b-=0.69"
+    },
+    "b-=0.69"
   )
   .from(
     ".curate2,.curate4,.curate6",
     {
       x: 1500,
       y: -1500,
-    },"c-=0.69"
+    },
+    "c-=0.69"
   )
   .from(
     ".curate3,.curate5",
@@ -570,28 +572,32 @@ shops
     {
       x: 1500,
       y: -1500,
-    },"e-=0.6"
+    },
+    "e-=0.6"
   )
   .from(
     ".your2,.your4",
     {
       x: 1500,
       y: 1500,
-    },"e-=0.6"
+    },
+    "e-=0.6"
   )
-   .from(
+  .from(
     ".taste1,.taste3,.taste5",
     {
       x: 1500,
       y: -1500,
-    },"f-=0.5"
+    },
+    "f-=0.5"
   )
   .from(
     ".taste2,.taste4",
     {
       x: 1500,
       y: 1500,
-    },"f-=0.5"
+    },
+    "f-=0.5"
   );
 
 // ---------------------------------------------
@@ -735,17 +741,19 @@ for (let i = 0; i <= steps; i++) {
   }
 }
 
-tlNew.fromTo(
-  ".h1-list h1",
-  {
-    y: 0,
-  },
-  {
-    y: -3500,
-    stagger: 0.035,
-  },
-  "-=1.4"
-).to(
+tlNew
+  .fromTo(
+    ".h1-list h1",
+    {
+      y: 0,
+    },
+    {
+      y: -3500,
+      stagger: 0.035,
+    },
+    "-=1.4"
+  )
+  .to(
     ".main-bottom",
     {
       top: "0%",
@@ -785,6 +793,34 @@ tlBottom
       opacity: 1,
     },
     "+=1"
+  )
+  .to(
+    ".telescope",
+    {
+      height: "55vh",
+      width: "90vw",
+      duration: 5,
+      top: "69%",
+    },
+    "z+=2"
+  )
+  .to(
+    ".telescope-heading",
+    {
+      fontSize: "6vw",
+      duration: 5,
+      left: "50%",
+    },
+    "z+=2"
+  )
+  .to(
+    ".nav3",
+    {
+      top: "10%",
+      left: "90%",
+      // transform: "translate(-50%,-50%)",
+    },
+    "z+=2"
   );
 
 // let main_Bottom = document.querySelector(".main-bottom");
@@ -812,3 +848,14 @@ tlBottom
 //     stagger: 0.09,
 //   }
 // );
+
+const telescope = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".main",
+    start: "60%",
+    end: "150%",
+    scrub: 2,
+    pin: true,
+    // markers: true,
+  },
+});

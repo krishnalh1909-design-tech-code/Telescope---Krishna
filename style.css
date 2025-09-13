@@ -22,9 +22,101 @@ body {
   overflow-x: hidden;
 }
 
-/* body::-webkit-scrollbar {
+body::-webkit-scrollbar {
   display: none;
-} */
+}
+
+/* ---------------------------------------------------- */
+.telescope {
+  /* height: 60vh;
+ width: 90vw;
+ background: white;
+ position: fixed;
+ top: 69%;
+ left: 50%;
+ z-index: 100;
+ transform: translate(-50%,-50%);
+ overflow: hidden; */
+
+  height: 100px;
+  width: 700px;
+  background: white;
+  position: fixed;
+  top: 92%;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.telescope-nav {
+  height: 60px;
+  width: 100%;
+  /* background-color: blue; */
+  display: flex;
+}
+
+.nav1 {
+  height: 100%;
+  width: 20%;
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  opacity: 0;
+  height: 0;
+}
+
+.nav1 h1 {
+  font-size: 20px;
+  font-family: Beauty2;
+}
+
+.nav2 {
+  height: 100%;
+  width: 60%;
+  opacity: 0;
+  height: 0;
+  /* background-color: rgb(34, 77, 34); */
+}
+
+.nav3 {
+  width: 300px;
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  top: 50%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.nav3 h1 {
+  font-weight: 100;
+  font-size: 20px;
+  font-family: Beauty2;
+  cursor: pointer;
+}
+
+.telescope-heading {
+  font-family: Beauty;
+  font-size: 1vw;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 400px) {
+  .telescope {
+    height: 50px;
+    width: 300px;
+  }
+}
+
+/* ----------------------------------------------------- */
 
 .main {
   height: 100%;
@@ -1540,7 +1632,7 @@ body {
   box-sizing: border-box;
   height: 101vh;
   width: 100%;
-  background-color: white;
+  background-color: #F4F3F0;
   position: absolute;
   top: 100%;
   left: 0;
@@ -1565,7 +1657,7 @@ body {
   width: 70%;
   align-items: center;
   margin-top: 2rem;
-  font-size: clamp(1.2rem, 2vw, 1rem);
+  font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
 .bottom-heading2 h1 {
