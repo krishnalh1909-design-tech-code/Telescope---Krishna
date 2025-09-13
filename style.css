@@ -1050,8 +1050,7 @@ body {
 .shop {
   width: 25%;
   height: 100%;
-  /* background-color: red; */
-  /* border: 1px solid black; */
+
 }
 
 .shop h1,
@@ -1174,49 +1173,58 @@ body {
 
 /* --------------------------------------------------------- */
 
+.clip-page{
+  width: 100%;
+  height: max-content;
+}
+
 .curate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 87vh;
   width: 100%;
   background-color: #e3f794;
   position: absolute;
-  top: 90%;
+  top: 69%;
   left: 0;
   clip-path: polygon(100% 0, 100% 30%, 100% 50%, 100% 100%, 0 64%, 0 30%);
 }
 
 .your {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 90vh;
   width: 100%;
   background-color: #fff;
   position: absolute;
-  top: 108%;
+  top: 91%;
   left: 0;
   clip-path: polygon(0 0, 100% 33%, 100% 71%, 0 100%, 0% 50%);
 }
 
 .taste {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 87vh;
   width: 100%;
   background-color: #e3f794;
   position: absolute;
-  top: 129%;
+  top: 117%;
   left: 0;
   clip-path: polygon(100% 0, 100% 30%, 100% 50%, 100% 100%, 0 64%, 0 30%);
 }
 
-/* @media (max-width: 768px) {
-  .section {
-    min-height: 90vh;
-  }
-
-  .curate, .taste {
-    clip-path: polygon(100% 0, 100% 35%, 100% 55%, 100% 100%, 0 70%, 0 35%);
-  }
-
-  .your {
-    clip-path: polygon(0 0, 100% 35%, 100% 75%, 0 100%, 0% 55%);
-  }
-} */
+.curate h1,
+.your h1,
+.taste h1 {
+  font-size: 15vw;
+  font-family: Beauty2;
+  font-weight: 200;
+}
+/* ------------------------------------------------------- */
 
 .page3 {
   height: 101vh;
@@ -1227,7 +1235,7 @@ body {
   justify-content: center;
   gap: 10px;
   position: relative;
-  /* background-color: #f4f3f0; */
+  background-color: #fff;
   overflow: hidden;
   font-family: Beauty;
 }
@@ -1521,16 +1529,16 @@ body {
   padding: 20px;
   box-sizing: border-box;
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
 }
 
 .img-box {
   background-color: green;
   width: 50px;
   height: 50px;
-  justify-self: center; 
-  align-self: center; 
+  justify-self: center;
+  align-self: center;
 }

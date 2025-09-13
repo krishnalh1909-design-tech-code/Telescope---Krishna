@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 // ✅ Lenis Setup (Smooth Scroll)
 const lenis = new Lenis({
   duration: 1.2, // slower scroll effect
@@ -517,10 +521,10 @@ const shops = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "0.4%",
-    end: "250%",
+    end: "200%",
     scrub: 1,
     pin: true,
-    // markers: true,
+    markers: true,
   },
 });
 
@@ -539,26 +543,55 @@ shops
     },
     "a"
   )
-  .to(
-    ".curate",
+  .from(
+    ".curate1",
     {
-      top: "67%",
-    },
-    "b-=0.5"
+      x: 1500,
+      y: 0,
+    },"b-=0.69"
   )
-  .to(
-    ".your",
+  .from(
+    ".curate2,.curate4,.curate6",
     {
-      top: "91%",
-    },
-    "b-=0.5"
+      x: 1500,
+      y: -1500,
+    },"c-=0.69"
   )
-  .to(
-    ".taste",
+  .from(
+    ".curate3,.curate5",
     {
-      top: "116.8%",
+      x: 1500,
+      y: 1500,
     },
-    "b-=0.5"
+    "d-=0.69"
+  )
+  .from(
+    ".your1,.your3",
+    {
+      x: 1500,
+      y: -1500,
+    },"e-=0.6"
+  )
+  .from(
+    ".your2,.your4",
+    {
+      x: 1500,
+      y: 1500,
+    },"e-=0.6"
+  )
+   .from(
+    ".taste1,.taste3,.taste5",
+    {
+      x: 1500,
+      y: -1500,
+    },"f-=0.5"
+  )
+  .from(
+    ".taste2,.taste4",
+    {
+      x: 1500,
+      y: 1500,
+    },"f-=0.5"
   );
 
 // ---------------------------------------------
