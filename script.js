@@ -524,7 +524,7 @@ const shops = gsap.timeline({
     end: "200%",
     scrub: 1,
     pin: true,
-    markers: true,
+    // markers: true,
   },
 });
 
@@ -669,7 +669,7 @@ const tlNew = gsap.timeline({
 
 const centerX2 = 0;
 const centerY2 = 48;
-const radius = 69;
+const radius = 109;
 const steps = 72;
 const durationPerStep = 1 / steps;
 const boxCount = 13;
@@ -741,11 +741,17 @@ tlNew.fromTo(
     y: 0,
   },
   {
-    y: -3000,
-    stagger: 0.03,
+    y: -3500,
+    stagger: 0.035,
   },
   "-=1.4"
-);
+).to(
+    ".main-bottom",
+    {
+      top: "0%",
+    },
+    "a-=0.9"
+  );
 
 const tlBottom = gsap.timeline({
   scrollTrigger: {
@@ -764,16 +770,8 @@ tlBottom
     {
       opacity: 0,
     },
-    "a"
+    "a-=15"
   )
-  .to(
-    ".main-bottom",
-    {
-      top: "0%",
-    },
-    "a"
-  )
-
   .to(
     ".bottom-heading1,.bottom-heading2",
     {
@@ -789,28 +787,28 @@ tlBottom
     "+=1"
   );
 
-let main_Bottom = document.querySelector(".main-bottom");
-main_Bottom.addEventListener("mousemove", (e) => {
-  gsap.to(".img-boxes", {
-    opacity: 1,
-    x: e.clientX,
-    y: e.clientY,
-  });
-});
+// let main_Bottom = document.querySelector(".main-bottom");
+// main_Bottom.addEventListener("mousemove", (e) => {
+//   gsap.to(".img-boxes", {
+//     opacity: 1,
+//     x: e.clientX,
+//     y: e.clientY,
+//   });
+// });
 
-gsap.fromTo(
-  ".img-box",
-  {
-    x: -300,
-    y: 300,
-    scale: 0,
-  },
-  {
-    x: 300,
-    y: -300,
-    scale: 1,
-    repeat: -1,
-    duration: 4,
-    stagger: 0.09,
-  }
-);
+// gsap.fromTo(
+//   ".img-box",
+//   {
+//     x: -300,
+//     y: 300,
+//     scale: 0,
+//   },
+//   {
+//     x: 300,
+//     y: -300,
+//     scale: 1,
+//     repeat: -1,
+//     duration: 4,
+//     stagger: 0.09,
+//   }
+// );
