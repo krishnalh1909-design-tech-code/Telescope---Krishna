@@ -17,6 +17,46 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
+const signinBtn = document.querySelector(".nav3 h1");
+const signinCloseBtn = document.querySelector(".signin-close-btn");
+
+signinBtn.addEventListener("click", () => {
+  gsap.to(".shadow", {
+    opacity: 0.5,
+    zIndex: 100,
+    duration: 0.01,
+  });
+
+  gsap.to(".signin-container", {
+    height: "50vh",
+    overflow: "initial",
+  });
+
+  gsap.to(".signin-close-btn", {
+    height: "55px",
+    duration: 0.3,
+    delay: 0.7,
+  });
+});
+
+signinCloseBtn.addEventListener("click", () => {
+  gsap.to(".signin-close-btn", {
+    height: "0px",
+    duration: 0.3,
+  });
+
+  gsap.to(".signin-container", {
+    height: "0vh",
+    overflow: "hidden",
+    delay: 0.2,
+  });
+
+  gsap.to(".shadow", {
+    opacity: 0,
+    zIndex: 90,
+  });
+});
+
 const boxM = document.querySelectorAll(".box");
 
 boxM.forEach((box) => {
@@ -177,33 +217,32 @@ document.querySelectorAll(".box").forEach((box) => {
 
 // ✅ Entry + Exit Animation for .box
 
+const boxes = document.querySelectorAll(".box");
+const centerX = window.innerWidth / 2;
+const centerY = window.innerHeight / 2;
 
-  const boxes = document.querySelectorAll(".box");
-  const centerX = window.innerWidth / 2;
-  const centerY = window.innerHeight / 2;
+const exitAnimations = [];
 
-  const exitAnimations = [];
+boxes.forEach((box, i) => {
+  const rect = box.getBoundingClientRect();
+  const boxX = rect.left + rect.width / 2;
+  const boxY = rect.top + rect.height / 2;
+  const dx = boxX - centerX;
+  const dy = boxY - centerY;
 
-  boxes.forEach((box, i) => {
-    const rect = box.getBoundingClientRect();
-    const boxX = rect.left + rect.width / 2;
-    const boxY = rect.top + rect.height / 2;
-    const dx = boxX - centerX;
-    const dy = boxY - centerY;
-
-    gsap.from(box, {
-      x: -dx,
-      y: -dy,
-      scale: 0,
-      opacity: 0,
-      duration: 2, // slowed down
-      ease: "power2.out",
-      delay: i * 0.1,
-    });
-
-    exitAnimations.push({ element: box, x: dx, y: dy });
+  gsap.from(box, {
+    x: -dx,
+    y: -dy,
+    scale: 0,
+    opacity: 0,
+    duration: 2, // slowed down
+    ease: "power2.out",
+    delay: i * 0.1,
   });
- // 5 seconds delay
+
+  exitAnimations.push({ element: box, x: dx, y: dy });
+});
+// 5 seconds delay
 
 const tl = gsap.timeline({
   scrollTrigger: {
@@ -226,7 +265,6 @@ exitAnimations.forEach(({ element, x, y }) => {
     0
   );
 });
-
 
 // ✅ Lines Fade & Slide
 gsap.from(".line1, .line2, .line3", {
@@ -794,7 +832,7 @@ tlBottom
   .to(
     ".telescope",
     {
-      height: "55vh",
+      height: "50vh",
       width: "90vw",
       duration: 5,
       top: "69%",
@@ -815,36 +853,9 @@ tlBottom
     {
       top: "10%",
       left: "90%",
-      // transform: "translate(-50%,-50%)",
     },
     "z+=2"
   )
-  .from(".nav1",{
-    opacity:0
+  .to(".nav1", {
+    opacity: 1,
   });
-
-// let main_Bottom = document.querySelector(".main-bottom");
-// main_Bottom.addEventListener("mousemove", (e) => {
-//   gsap.to(".img-boxes", {
-//     opacity: 1,
-//     x: e.clientX,
-//     y: e.clientY,
-//   });
-// });
-
-// gsap.fromTo(
-//   ".img-box",
-//   {
-//     x: -300,
-//     y: 300,
-//     scale: 0,
-//   },
-//   {
-//     x: 300,
-//     y: -300,
-//     scale: 1,
-//     repeat: -1,
-//     duration: 4,
-//     stagger: 0.09,
-//   }
-// );
