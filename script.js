@@ -176,31 +176,34 @@ document.querySelectorAll(".box").forEach((box) => {
 });
 
 // ✅ Entry + Exit Animation for .box
-const boxes = document.querySelectorAll(".box");
-const centerX = window.innerWidth / 2;
-const centerY = window.innerHeight / 2;
 
-const exitAnimations = [];
 
-boxes.forEach((box, i) => {
-  const rect = box.getBoundingClientRect();
-  const boxX = rect.left + rect.width / 2;
-  const boxY = rect.top + rect.height / 2;
-  const dx = boxX - centerX;
-  const dy = boxY - centerY;
+  const boxes = document.querySelectorAll(".box");
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
 
-  gsap.from(box, {
-    x: -dx,
-    y: -dy,
-    scale: 0,
-    opacity: 0,
-    duration: 2, // slowed down
-    ease: "power2.out",
-    delay: i * 0.1,
+  const exitAnimations = [];
+
+  boxes.forEach((box, i) => {
+    const rect = box.getBoundingClientRect();
+    const boxX = rect.left + rect.width / 2;
+    const boxY = rect.top + rect.height / 2;
+    const dx = boxX - centerX;
+    const dy = boxY - centerY;
+
+    gsap.from(box, {
+      x: -dx,
+      y: -dy,
+      scale: 0,
+      opacity: 0,
+      duration: 2, // slowed down
+      ease: "power2.out",
+      delay: i * 0.1,
+    });
+
+    exitAnimations.push({ element: box, x: dx, y: dy });
   });
-
-  exitAnimations.push({ element: box, x: dx, y: dy });
-});
+ // 5 seconds delay
 
 const tl = gsap.timeline({
   scrollTrigger: {
@@ -223,6 +226,7 @@ exitAnimations.forEach(({ element, x, y }) => {
     0
   );
 });
+
 
 // ✅ Lines Fade & Slide
 gsap.from(".line1, .line2, .line3", {
@@ -765,7 +769,7 @@ const tlBottom = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
     start: "50.9%",
-    end: "150%",
+    end: "200%",
     scrub: 2,
     pin: true,
     // markers: true,
@@ -773,13 +777,6 @@ const tlBottom = gsap.timeline({
 });
 
 tlBottom
-  .to(
-    ".tag3-line1,.tag3-line2",
-    {
-      opacity: 0,
-    },
-    "a-=15"
-  )
   .to(
     ".bottom-heading1,.bottom-heading2",
     {
@@ -821,7 +818,10 @@ tlBottom
       // transform: "translate(-50%,-50%)",
     },
     "z+=2"
-  );
+  )
+  .from(".nav1",{
+    opacity:0
+  });
 
 // let main_Bottom = document.querySelector(".main-bottom");
 // main_Bottom.addEventListener("mousemove", (e) => {
@@ -848,14 +848,3 @@ tlBottom
 //     stagger: 0.09,
 //   }
 // );
-
-const telescope = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".main",
-    start: "60%",
-    end: "150%",
-    scrub: 2,
-    pin: true,
-    // markers: true,
-  },
-});
