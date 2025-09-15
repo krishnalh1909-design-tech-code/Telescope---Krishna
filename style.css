@@ -22,9 +22,41 @@ body {
   overflow-x: hidden;
 }
 
-body::-webkit-scrollbar {
-  display: none;
-}
+
+ #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 6px solid #ccc;
+      border-top-color: #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+     body.loaded #loader {
+      opacity: 0;
+      pointer-events: none;
+    }
 
 /* ---------------------------------------------------- */
 .telescope {
@@ -785,6 +817,25 @@ form button:hover {
 }
 
 /* Responsive adjustments for tablets and phones */
+
+@media (max-width: 1500px) {
+  .right-arrow,
+  .left-arrow {
+    height: 55px;
+    width: 55px;
+  }
+
+  .right-arrow {
+    right: 40%;
+    transform: translateX(-50%);
+  }
+
+  .left-arrow {
+    left: 45%;
+    transform: translateX(-50%);
+  }
+}
+
 @media (max-width: 768px) {
   .right-arrow,
   .left-arrow {
@@ -821,24 +872,6 @@ form button:hover {
   .left-arrow {
     bottom: 12.5%;
     left: 45%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-@media (max-width: 1500px) {
-  .right-arrow,
-  .left-arrow {
-    height: 55px;
-    width: 55px;
-  }
-
-  .right-arrow {
-    right: 40%;
-    transform: translate(-50%, -50%);
-  }
-
-  .left-arrow {
-    left: 40%;
     transform: translate(-50%, -50%);
   }
 }
@@ -1236,6 +1269,18 @@ form button:hover {
   }
 }
 
+@media (max-width: 1500px) {
+  .page2-part1 {
+    height: 33vh;
+    padding-top: 15px;
+    padding-left: 10px;
+  }
+
+  .page2-part2 {
+    height: 67vh;
+  }
+}
+
 /* ---------------------------------------------------- */
 
 .slider1 {
@@ -1262,6 +1307,13 @@ form button:hover {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 1500px) {
+  .slider1 {
+    height: 65vh;
+    width: 500px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -1699,7 +1751,7 @@ form button:hover {
   transform-origin: bottom;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1500px) {
   .tag3-line1,
   .tag3-line2 {
     opacity: 0;
@@ -1716,6 +1768,12 @@ form button:hover {
   top: 0;
   right: 0;
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+@media (max-width: 1400px) {
+  .page3-clip-section {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
 }
 
 @media (max-width: 500px) {

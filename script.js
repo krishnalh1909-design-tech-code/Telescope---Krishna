@@ -2,12 +2,36 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
+let resizeTimeout2;
+
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout2);
+  resizeTimeout2 = setTimeout(() => {
+    window.location.reload();
+  }, 500); // wait 500ms after last resize event
+});
+
+
+ window.addEventListener('load', () => {
+      // Hide loader after page fully loads
+      document.body.classList.add('loaded');
+      // Show your actual content
+      document.getElementById('content').style.display = 'block';
+      // Optional: remove loader from DOM after fade out transition
+      setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) loader.style.display = 'none';
+      }, 2500);
+    });
+
+
 // ✅ Lenis Setup (Smooth Scroll)
 const lenis = new Lenis({
-  duration: 1.2, // slower scroll effect
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+  duration: 0.8,
+  easing: (t) => 1 - Math.pow(1 - t, 3), // cubic ease-out
   smooth: true,
 });
+
 
 lenis.on("scroll", ScrollTrigger.update);
 
@@ -193,78 +217,80 @@ const imageSets = {
   ],
 };
 
-document.querySelectorAll(".box").forEach((box) => {
-  const id = box.id;
-  const img = box.querySelector("img");
+setTimeout(() => {
+  document.querySelectorAll(".box").forEach((box) => {
+    const id = box.id;
+    const img = box.querySelector("img");
 
-  if (imageSets[id] && img) {
-    // 🔁 Pick a random index from 0 to 5
-    const randomIndex = Math.floor(Math.random() * 6);
+    if (imageSets[id] && img) {
+      // 🔁 Pick a random index from 0 to 5
+      const randomIndex = Math.floor(Math.random() * 6);
 
-    // 🧠 Set the image src and store the index
-    img.src = imageSets[id][randomIndex];
-    box.dataset.index = randomIndex;
+      // 🧠 Set the image src and store the index
+      img.src = imageSets[id][randomIndex];
+      box.dataset.index = randomIndex;
 
-    // 🔁 Add click event to cycle through images
-    box.addEventListener("click", () => {
-      let currentIndex = parseInt(box.dataset.index, 10);
-      const nextIndex = (currentIndex + 1) % 6;
-      box.dataset.index = nextIndex;
-      img.src = imageSets[id][nextIndex];
-    });
-  }
-});
-
-// ✅ Entry + Exit Animation for .box
-
-const boxes = document.querySelectorAll(".box");
-const centerX = window.innerWidth / 2;
-const centerY = window.innerHeight / 2;
-
-const exitAnimations = [];
-
-boxes.forEach((box, i) => {
-  const rect = box.getBoundingClientRect();
-  const boxX = rect.left + rect.width / 2;
-  const boxY = rect.top + rect.height / 2;
-  const dx = boxX - centerX;
-  const dy = boxY - centerY;
-
-  gsap.from(box, {
-    x: -dx,
-    y: -dy,
-    scale: 0,
-    opacity: 0,
-    duration: 2, // slowed down
-    ease: "power2.out",
-    delay: i * 0.1,
+      // 🔁 Add click event to cycle through images
+      box.addEventListener("click", () => {
+        let currentIndex = parseInt(box.dataset.index, 10);
+        const nextIndex = (currentIndex + 1) % 6;
+        box.dataset.index = nextIndex;
+        img.src = imageSets[id][nextIndex];
+      });
+    }
   });
 
-  exitAnimations.push({ element: box, x: dx, y: dy });
-});
-// 5 seconds delay
+  // ✅ Entry Animation for .box
+  const boxes = document.querySelectorAll(".box");
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
 
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".page1",
-    start: "top top",
-    end: "bottom top",
-    scrub: 0.5,
-  },
-});
+  const exitAnimations = [];
 
-exitAnimations.forEach(({ element, x, y }) => {
-  tl.to(
-    element,
-    {
-      x: x * 2,
-      y: y * 2,
-      scale: 1.5,
-      ease: "sine.inOut",
+  boxes.forEach((box, i) => {
+    const rect = box.getBoundingClientRect();
+    const boxX = rect.left + rect.width / 2;
+    const boxY = rect.top + rect.height / 2;
+    const dx = boxX - centerX;
+    const dy = boxY - centerY;
+
+    gsap.from(box, {
+      x: -dx,
+      y: -dy,
+      scale: 0,
+      opacity: 0,
+      duration: 2, // slowed down
+      ease: "power2.out",
+      delay: i * 0.1,
+    });
+
+    exitAnimations.push({ element: box, x: dx, y: dy });
+  });
+
+  // Timeline with ScrollTrigger
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".page1",
+      start: "top top",
+      end: "bottom top",
+      scrub: 0.5,
     },
-    0
-  );
-});
+  });
+
+  exitAnimations.forEach(({ element, x, y }) => {
+    tl.to(
+      element,
+      {
+        x: x * 2,
+        y: y * 2,
+        scale: 1.5,
+        ease: "sine.inOut",
+      },
+      0
+    );
+  });
+}, 800); // 2500ms delay = 2.5 seconds
+
 
 // ✅ Lines Fade & Slide
 gsap.from(".line1, .line2, .line3", {
