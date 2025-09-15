@@ -2,28 +2,11 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
-let resizeTimeout2;
 
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout2);
-  resizeTimeout2 = setTimeout(() => {
-    window.location.reload();
-  }, 500); // wait 500ms after last resize event
-});
-
-
- window.addEventListener('load', () => {
-      // Hide loader after page fully loads
-      document.body.classList.add('loaded');
-      // Show your actual content
-      document.getElementById('content').style.display = 'block';
-      // Optional: remove loader from DOM after fade out transition
-      setTimeout(() => {
-        const loader = document.getElementById('loader');
-        if (loader) loader.style.display = 'none';
-      }, 2500);
-    });
-
+setTimeout(() => {
+  const loader = document.getElementById("loader");
+  loader.style.display = "none";
+}, 2500);
 
 // ✅ Lenis Setup (Smooth Scroll)
 const lenis = new Lenis({
@@ -31,7 +14,6 @@ const lenis = new Lenis({
   easing: (t) => 1 - Math.pow(1 - t, 3), // cubic ease-out
   smooth: true,
 });
-
 
 lenis.on("scroll", ScrollTrigger.update);
 
@@ -289,8 +271,7 @@ setTimeout(() => {
       0
     );
   });
-}, 800); // 2500ms delay = 2.5 seconds
-
+}, 1500); // 2500ms delay = 2.5 seconds
 
 // ✅ Lines Fade & Slide
 gsap.from(".line1, .line2, .line3", {
