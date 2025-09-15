@@ -2,15 +2,6 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
-let resizeTimeout2;
-
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimeout2);
-  resizeTimeout2 = setTimeout(() => {
-    window.location.reload();
-  }, 500); // wait 500ms after last resize event
-});
-
 
  window.addEventListener('load', () => {
       // Hide loader after page fully loads
