@@ -780,7 +780,7 @@ ScrollTrigger.matchMedia({
     const shops = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
-        start: "2%",
+        start: "1%",
         end: "200%",
         scrub: 0.7,
         pin: true,
@@ -803,7 +803,7 @@ ScrollTrigger.matchMedia({
     const page3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
-        start: "55.7%",
+        start: "51.7%",
         end: "200%",
         scrub: 1,
         pin: true,
@@ -834,7 +834,7 @@ ScrollTrigger.matchMedia({
     const tlNew = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
-        start: "50.8%",
+        start: "51.8%",
         end: "+=5000",
         scrub: 2,
         pin: true,
@@ -917,7 +917,7 @@ ScrollTrigger.matchMedia({
     const tlBottom = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
-        start: "50.9%",
+        start: "51.9%",
         end: "200%",
         scrub: 2,
         pin: true,
