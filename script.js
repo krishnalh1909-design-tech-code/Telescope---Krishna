@@ -593,20 +593,20 @@ window.addEventListener("resize", () => {
 
 
 
-const shops = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".main",
-    start: "0.4%",
-    end: "250%",
-    scrub: 0.7,
-    pin: true,
-    // markers: true,
-  },
-});
+// const shops = gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".main",
+//     start: "0.4%",
+//     end: "250%",
+//     scrub: 0.7,
+//     pin: true,
+//     // markers: true,
+//   },
+// });
 
-shops
-  .to(".shops", { top: "-130%" }, "a")
-  .to(".page2-part2", { opacity: 0 }, "a")
+// shops
+//   .to(".shops", { top: "-130%" }, "a")
+//   .to(".page2-part2", { opacity: 0 }, "a")
 
 const page3 = gsap.timeline({
   scrollTrigger: {
