@@ -22,41 +22,39 @@ body {
   overflow-x: hidden;
 }
 
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
 
- #loader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      transition: opacity 0.5s ease;
-    }
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top-color: #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-    .spinner {
-      width: 60px;
-      height: 60px;
-      border: 6px solid #ccc;
-      border-top-color: #3498db;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
-
-    @keyframes spin {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-     body.loaded #loader {
-      opacity: 0;
-      pointer-events: none;
-    }
+body.loaded #loader {
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* ---------------------------------------------------- */
 .telescope {
@@ -1340,7 +1338,7 @@ form button:hover {
   position: absolute;
   top: 120%;
   left: 0;
-  min-height: 240vh;
+  min-height: 228vh;
   width: 100%;
   background-color: #f4f3f0;
   display: flex;

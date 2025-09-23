@@ -597,14 +597,14 @@ window.addEventListener("resize", () => {
 
 
 
-
-
 // -------------------------------------------
-// ScrollTrigger.matchMedia to handle responsive GSAP timelines
+
 ScrollTrigger.matchMedia({
-  // Desktop (above 1000px width)
-  "(min-width: 1001px)": function () {
-    // Shops timeline
+
+
+  
+ "(min-width: 1001px)": function () {
+   
     const shops = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
@@ -617,12 +617,12 @@ ScrollTrigger.matchMedia({
     });
 
     shops
-      .to(".page2-part2", { opacity: 0 }, "a")
+      .to(".page2-part2", { opacity: 0, }, "a")
       .to(".shops", { top: "-250%" }, "a")
       .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
       .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
       .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")
-      .from(".your1,.your3", { x: 1500, y: -1500 }, "e-=0.6")
+      .from(".your1,.your3", { x: 1500, y: -1500,}, "e-=0.6")
       .from(".your2,.your4", { x: 1500, y: 1500 }, "e-=0.6")
       .from(".taste1,.taste3,.taste5", { x: 1500, y: -1500 }, "f-=0.5")
       .from(".taste2,.taste4", { x: 1500, y: 1500 }, "f-=0.5");
@@ -738,12 +738,7 @@ ScrollTrigger.matchMedia({
     }
 
     tlNew
-      .fromTo(
-        ".h1-list h1",
-        { y: 0 },
-        { y: -3500, stagger: 0.035 },
-        "-=1.4"
-      )
+      .fromTo(".h1-list h1", { y: 0 }, { y: -3500, stagger: 0.035 }, "-=1.4")
       .to(".main-bottom", { top: "0%" }, "a-=0.9");
 
     // tlBottom timeline
@@ -783,11 +778,7 @@ ScrollTrigger.matchMedia({
       .to(".nav3", { top: "10%", left: "90%" }, "z+=2")
       .to(".nav1", { opacity: 1 });
   },
-
-
-
-
-
+ 
   // Mobile/tablet (1000px and below)
   "(max-width: 1000px)": function () {
     // Adjust these timelines for mobile if needed, e.g. shorter pin, less scrub
@@ -795,8 +786,8 @@ ScrollTrigger.matchMedia({
     const shops = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
-        start: "0.4%",
-        end: "150%",
+        start: "0.5%",
+        end: "300%",
         scrub: 0.7,
         pin: true,
       },
@@ -805,6 +796,9 @@ ScrollTrigger.matchMedia({
     shops
       .to(".page2-part2", { opacity: 0 }, "a")
       .to(".shops", { top: "-260%" }, "a")
+      .to(".curate", { top: "79%" },"a")
+      .to(".your", { top: "101%" },"a")
+      .to(".taste", { top: "127%" },"a")
       .from(".curate1", { x: 800, y: 0 }, "b-=0.65")
       .from(".curate2,.curate4,.curate6", { x: 800, y: -800 }, "c-=0.65")
       .from(".curate3,.curate5", { x: 800, y: 800 }, "d-=0.65")
@@ -815,8 +809,7 @@ ScrollTrigger.matchMedia({
 
     // Simplify or omit other timelines on mobile or scale down animation values as needed
 
-
-     const page3 = gsap.timeline({
+    const page3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
         start: "50.7%",
@@ -926,12 +919,7 @@ ScrollTrigger.matchMedia({
     }
 
     tlNew
-      .fromTo(
-        ".h1-list h1",
-        { y: 0 },
-        { y: -3500, stagger: 0.035 },
-        "-=1.4"
-      )
+      .fromTo(".h1-list h1", { y: 0 }, { y: -3500, stagger: 0.035 }, "-=1.4")
       .to(".main-bottom", { top: "0%" }, "a-=0.9");
 
     // tlBottom timeline
@@ -971,6 +959,21 @@ ScrollTrigger.matchMedia({
       .to(".nav3", { top: "10%", left: "90%" }, "z+=2")
       .to(".nav1", { opacity: 1 });
   },
-  },
-);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
