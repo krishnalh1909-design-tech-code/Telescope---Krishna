@@ -591,6 +591,8 @@ window.addEventListener("resize", () => {
   }, 200); // adjust delay as needed
 });
 
+
+
 const shops = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
@@ -598,30 +600,22 @@ const shops = gsap.timeline({
     end: "250%",
     scrub: 0.7,
     pin: true,
-    markers: true,
+    // markers: true,
   },
 });
 
 shops
-  .to(".shops", { top: "-260%" }, "a")
+  .to(".shops", { top: "-130%" }, "a")
   .to(".page2-part2", { opacity: 0 }, "a")
-  // .from(".curate1", { x: 800, y: 0 }, "b-=0.65")
-  // .from(".curate2,.curate4,.curate6", { x: 800, y: -800 }, "c-=0.65")
-  // .from(".your1,.your3", { x: 800, y: -800 }, "e-=0.6")
-  // .from(".your1,.your3", { x: 800, y: -800 }, "e-=0.6")
-  // .from(".your2,.your4", { x: 800, y: 800 }, "e-=0.6")
-
-  // .from(".taste1,.taste3,.taste5", { x: 800, y: -800 }, "f-=0.5")
-  // .from(".taste2,.taste4", { x: 800, y: 800 }, "f-=0.5");
 
 const page3 = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
-    start: "50.7%",
+    start: "50%",
     end: "200%",
     scrub: 1,
     pin: true,
-    // markers: true,
+    markers: true,
   },
 });
 
