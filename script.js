@@ -576,6 +576,19 @@ function createTimeline() {
       }
     );
   }
+
+  size.to(".page2-part2", { opacity: 0 }, "a")
+      .to(".shops", { top: "-260%" }, "a")
+      .to(".curate", { top: "79%" },"a")
+      .to(".your", { top: "101%" },"a")
+      .to(".taste", { top: "127%" },"a")
+      .from(".curate1", { x: 800, y: 0 }, "b-=0.65")
+      .from(".curate2,.curate4,.curate6", { x: 800, y: -800 }, "c-=0.65")
+      .from(".curate3,.curate5", { x: 800, y: 800 }, "d-=0.65")
+      .from(".your1,.your3", { x: 800, y: -800 }, "e-=0.6")
+      .from(".your2,.your4", { x: 800, y: 800 }, "e-=0.6")
+      .from(".taste1,.taste3,.taste5", { x: 800, y: -800 }, "f-=0.5")
+      .from(".taste2,.taste4", { x: 800, y: 800 }, "f-=0.5");
 }
 
 // Create timeline initially
@@ -781,34 +794,6 @@ ScrollTrigger.matchMedia({
  
   // Mobile/tablet (1000px and below)
   "(max-width: 1000px)": function () {
-    // Adjust these timelines for mobile if needed, e.g. shorter pin, less scrub
-
-    const shops = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".main",
-        start: "0.5%",
-        end: "300%",
-        scrub: 0.7,
-        pin: true,
-      },
-    });
-
-    shops
-      .to(".page2-part2", { opacity: 0 }, "a")
-      .to(".shops", { top: "-260%" }, "a")
-      .to(".curate", { top: "79%" },"a")
-      .to(".your", { top: "101%" },"a")
-      .to(".taste", { top: "127%" },"a")
-      .from(".curate1", { x: 800, y: 0 }, "b-=0.65")
-      .from(".curate2,.curate4,.curate6", { x: 800, y: -800 }, "c-=0.65")
-      .from(".curate3,.curate5", { x: 800, y: 800 }, "d-=0.65")
-      .from(".your1,.your3", { x: 800, y: -800 }, "e-=0.6")
-      .from(".your2,.your4", { x: 800, y: 800 }, "e-=0.6")
-      .from(".taste1,.taste3,.taste5", { x: 800, y: -800 }, "f-=0.5")
-      .from(".taste2,.taste4", { x: 800, y: 800 }, "f-=0.5");
-
-    // Simplify or omit other timelines on mobile or scale down animation values as needed
-
     const page3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
