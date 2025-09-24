@@ -1,4 +1,5 @@
 (function () {
+  // Check if width is inside the 600-1024 range (inclusive)
   function isInRange(width) {
     return width >= 200 && width <= 600 && width < 1000;
   }
@@ -27,9 +28,8 @@ window.addEventListener("load", () => {
     if (loader) {
       loader.style.display = "none";
     }
-  }, 3000); 
+  }, 3000); // 3 seconds
 });
-
 
 const signinBtn = document.querySelector(".nav3 h1");
 const signinCloseBtn = document.querySelector(".signin-close-btn");
@@ -576,35 +576,33 @@ window.addEventListener("resize", () => {
   }, 200); // adjust delay as needed
 });
 
-// -------------------------------------------
+const shops = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".main",
+    start: "0.4%",
+    end: "200%",
+    scrub: 1,
+    pin: true,
+    // markers: true,
+  },
+});
 
-// const shops = gsap.timeline({
-//   scrollTrigger: {
-//     trigger: ".main",
-//     start: "0.4%",
-//     end: "200%",
-//     scrub: 1,
-//     pin: true,
-//     // markers: true,
-//   },
-// });
-
-// shops
-//   .to(".page2-part2", { opacity: 0 }, "a")
-//   .to(".shops", { top: "0%" }, "a")
-//   .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
-//   .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
-//   .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")
-//   .from(".your1,.your3", { x: 1500, y: -1500 }, "e-=0.6")
-//   .from(".your2,.your4", { x: 1500, y: 1500 }, "e-=0.6")
-//   .from(".taste1,.taste3,.taste5", { x: 1500, y: -1500 }, "f-=0.5")
-//   .from(".taste2,.taste4", { x: 1500, y: 1500 }, "f-=0.5");
+shops
+  .to(".page2-part2", { opacity: 0 }, "a")
+  .to(".shops", { top: "0%" }, "a")
+  .from(".curate1", { x: 1500, y: 0 }, "b-=0.69")
+  .from(".curate2,.curate4,.curate6", { x: 1500, y: -1500 }, "c-=0.69")
+  .from(".curate3,.curate5", { x: 1500, y: 1500 }, "d-=0.69")
+  .from(".your1,.your3", { x: 1500, y: -1500 }, "e-=0.6")
+  .from(".your2,.your4", { x: 1500, y: 1500 }, "e-=0.6")
+  .from(".taste1,.taste3,.taste5", { x: 1500, y: -1500 }, "f-=0.5")
+  .from(".taste2,.taste4", { x: 1500, y: 1500 }, "f-=0.5");
 
 // Page3 timeline
 const page3 = gsap.timeline({
   scrollTrigger: {
     trigger: ".main",
-    start: "50%",
+    start: "50.7%",
     end: "200%",
     scrub: 1,
     pin: true,
