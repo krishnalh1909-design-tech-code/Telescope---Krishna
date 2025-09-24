@@ -773,9 +773,9 @@ ScrollTrigger.matchMedia({
       .to(".nav1", { opacity: 1 });
   },
 
-  // Mobile/tablet (1000px and below)
+  //For Mobile/Tablet 
   "(max-width: 1000px)": function () {
-    // Adjust these timelines for mobile if needed, e.g. shorter pin, less scrub
+    
 
     const shops = gsap.timeline({
       scrollTrigger: {
@@ -803,7 +803,7 @@ ScrollTrigger.matchMedia({
     const page3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
-        start: "50%",
+        start: "49%",
         end: "200%",
         scrub: 1,
         pin: true,
