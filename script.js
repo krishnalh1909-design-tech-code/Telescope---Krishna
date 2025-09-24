@@ -1,5 +1,4 @@
 (function () {
-  // Check if width is inside the 600-1024 range (inclusive)
   function isInRange(width) {
     return width >= 200 && width <= 600 && width < 1000;
   }
@@ -28,23 +27,9 @@ window.addEventListener("load", () => {
     if (loader) {
       loader.style.display = "none";
     }
-  }, 3000); // 3 seconds
+  }, 3000); 
 });
 
-// ✅ Lenis Setup (Smooth Scroll)
-const lenis = new Lenis({
-  duration: 0.8,
-  easing: (t) => 1 - Math.pow(1 - t, 3), // cubic ease-out
-  smooth: true,
-});
-
-lenis.on("scroll", ScrollTrigger.update);
-
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
-
-gsap.ticker.lagSmoothing(0);
 
 const signinBtn = document.querySelector(".nav3 h1");
 const signinCloseBtn = document.querySelector(".signin-close-btn");
