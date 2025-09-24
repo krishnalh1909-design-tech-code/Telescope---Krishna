@@ -1338,7 +1338,7 @@ form button:hover {
   position: absolute;
   top: 100%;
   left: 0;
-  height: 140vh;
+  height: 100vh;
   width: 100%;
   background-color: #f4f3f0;
   display: flex;
