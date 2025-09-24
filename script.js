@@ -803,7 +803,7 @@ ScrollTrigger.matchMedia({
     const page3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".main",
-        start: "51.7%",
+        start: "50%",
         end: "200%",
         scrub: 1,
         pin: true,
